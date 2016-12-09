@@ -1,0 +1,5 @@
+include ':app'
+include ':researchstack-sdk'
+project(':researchstack-sdk').projectDir = file('../researchstack-sdk/researchstack-sdk')
+include ':android-sdk'
+project(':android-sdk').projectDir = file('../researchstack-sdk/android-sdk')
