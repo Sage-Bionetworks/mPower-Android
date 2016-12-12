@@ -31,6 +31,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     testCompile 'junit:junit:4.12'
-    compile project(':researchstack-sdk')
+
+    // These are helper modules built on top of ResearchStack by Sage
+    //compile project(':researchstack-sdk')
+    compile project(path: ':researchstack-sdk', configuration: 'sourceRelease')
+
     compile project(':android-sdk')
 }

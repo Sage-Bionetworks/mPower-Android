@@ -8,11 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BridgeAndroidSdk/android-sdk" />
+            <option value="$PROJECT_DIR$/BridgeAndroidSdk/researchstack-sdk" />
             <option value="$PROJECT_DIR$/ResearchStack/backbone" />
             <option value="$PROJECT_DIR$/ResearchStack/skin" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/../researchstack-sdk/android-sdk" />
-            <option value="$PROJECT_DIR$/../researchstack-sdk/researchstack-sdk" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
