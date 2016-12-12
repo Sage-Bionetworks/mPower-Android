@@ -31,6 +31,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     testCompile 'junit:junit:4.12'
-    compile project(':researchstack-sdk')
+
+    // compile in the skin project from ResearchStack source
+    compile project(':skin'), { exclude group: 'joda-time', module: 'joda-time' }
+    compile project(':researchstack-sdk'), {
+        // exclude the skin project since we are compiling from source
+        exclude group: 'org.researchstack:skin', module: 'org.researchstack:skin'
+    }
+
     compile project(':android-sdk')
 }
