@@ -1,3 +1,6 @@
 [submodule "researchstack-sdk"]
 	path = researchstack-sdk
 	url = https://github.com/Sage-Bionetworks/BridgeAndroidSDK.git
+[submodule "MPower/ResearchStack"]
+	path = MPower/ResearchStack
+	url = https://github.com/ResearchStack/ResearchStack.git
