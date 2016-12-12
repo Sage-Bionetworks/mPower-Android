@@ -1,9 +1,14 @@
 <resources>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="Widget.MPower.Toolbar" parent="@style/Base.Widget.MPower.Toolbar">
+        <item name="android:elevation">4dp</item>
+        <item name="android:outlineProvider">bounds</item>
     </style>
+
+    <style name="Widget.MPower.Toolbar.Transparent" parent="@style/Base.Widget.MPower.Toolbar">
+        <item name="android:elevation">0dp</item>
+        <item name="android:outlineProvider">none</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Widget.MPower.Toolbar.Title.Transparent</item>
+    </style>
+
 </resources>

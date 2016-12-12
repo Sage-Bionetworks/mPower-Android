@@ -12,7 +12,6 @@ import org.researchstack.backbone.storage.file.FileAccess;
 import org.researchstack.backbone.storage.file.PinCodeConfig;
 import org.researchstack.backbone.storage.file.SimpleFileAccess;
 import org.researchstack.backbone.storage.file.aes.AesProvider;
-import org.researchstack.backbone.task.Task;
 import org.researchstack.skin.AppPrefs;
 import org.researchstack.skin.DataProvider;
 import org.researchstack.skin.PermissionRequestManager;
@@ -48,38 +47,13 @@ public class MPowerResearchStack extends ResearchStack {
 
     public MPowerResearchStack(Context context) {
 
-        // TODO: figure out why so file isnt loading
-        //SQLiteDatabase.loadLibs(context);
-        mEncryptedDb = new BridgeEncryptedDatabase(context,
-                SqlCipherDatabaseHelper.DEFAULT_NAME,
-                null,
-                SqlCipherDatabaseHelper.DEFAULT_VERSION,
-                new UpdatablePassphraseProvider());
-
         mFileAccess = new SimpleFileAccess();
-
-        long autoLockTime = AppPrefs.getInstance(context).getAutoLockTime();
-        mPinCodeConfig = new PinCodeConfig(autoLockTime);
 
         mEncryptionProvider = new AesProvider();
 
         mResourceManager = new MPowerResourceManager();
 
-        mUiManager = new MPowerUiManager();
-
         mDataProvider = new MPowerDataProvider(context);
-
-        mTaskProvider = new TaskProvider() {
-            @Override
-            public Task get(String taskId) {
-                return null;
-            }
-
-            @Override
-            public void put(String id, Task task) {
-
-            }
-        };
 
         mNotificationConfig = new SimpleNotificationConfig();
 
@@ -88,6 +62,15 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected AppDatabase createAppDatabaseImplementation(Context context) {
+        if (mEncryptedDb == null) {
+            // TODO: figure out why so file isnt loading
+            //SQLiteDatabase.loadLibs(context);
+            mEncryptedDb = new BridgeEncryptedDatabase(context,
+                    SqlCipherDatabaseHelper.DEFAULT_NAME,
+                    null,
+                    SqlCipherDatabaseHelper.DEFAULT_VERSION,
+                    new UpdatablePassphraseProvider());
+        }
         return mEncryptedDb;
     }
 
@@ -98,6 +81,10 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected PinCodeConfig getPinCodeConfig(Context context) {
+        if (mPinCodeConfig == null) {
+            long autoLockTime = AppPrefs.getInstance(context).getAutoLockTime();
+            mPinCodeConfig = new PinCodeConfig(autoLockTime);
+        }
         return mPinCodeConfig;
     }
 
@@ -113,6 +100,9 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected UiManager createUiManagerImplementation(Context context) {
+        if (mUiManager == null) {
+            mUiManager = new MPowerUiManager();
+        }
         return mUiManager;
     }
 
@@ -123,6 +113,9 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected TaskProvider createTaskProviderImplementation(Context context) {
+        if (mTaskProvider == null) {
+            mTaskProvider = new MPowerTaskProvider(context);
+        }
         return mTaskProvider;
     }
 

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MPower</string>
     <string name="action_settings">Settings</string>
+
+    <string name="task_inital_toolbar_title">task_inital_toolbar_title</string>
+
 </resources>
