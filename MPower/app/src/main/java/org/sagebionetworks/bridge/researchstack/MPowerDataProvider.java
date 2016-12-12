@@ -2,6 +2,7 @@ package org.sagebionetworks.bridge.researchstack;
 
 import android.content.Context;
 
+import org.researchstack.backbone.ResourcePathManager;
 import org.researchstack.backbone.result.TaskResult;
 
 /**
@@ -17,7 +18,9 @@ public class MPowerDataProvider extends BridgeDataProvider {
     static final String USER_AGENT = System.getProperty("http.agent");
 
     public MPowerDataProvider(Context context) {
-        super(context, BASE_URL, STUDY_ID, USER_AGENT);
+        // TODO give path to permission file for uploads
+        super(BASE_URL, STUDY_ID, USER_AGENT,
+                new ResourcePathManager.Resource(ResourcePathManager.Resource.TYPE_HTML, "", ""));
     }
 
     @Override

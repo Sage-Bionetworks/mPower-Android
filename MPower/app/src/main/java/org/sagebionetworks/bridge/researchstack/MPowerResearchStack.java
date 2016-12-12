@@ -48,7 +48,8 @@ public class MPowerResearchStack extends ResearchStack {
 
     public MPowerResearchStack(Context context) {
 
-        SQLiteDatabase.loadLibs(context);
+        // TODO: figure out why so file isnt loading
+        //SQLiteDatabase.loadLibs(context);
         mEncryptedDb = new BridgeEncryptedDatabase(context,
                 SqlCipherDatabaseHelper.DEFAULT_NAME,
                 null,
