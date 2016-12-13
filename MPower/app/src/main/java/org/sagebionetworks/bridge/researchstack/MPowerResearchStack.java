@@ -63,8 +63,7 @@ public class MPowerResearchStack extends ResearchStack {
     @Override
     protected AppDatabase createAppDatabaseImplementation(Context context) {
         if (mEncryptedDb == null) {
-            // TODO: figure out why so file isnt loading
-            //SQLiteDatabase.loadLibs(context);
+            SQLiteDatabase.loadLibs(context);
             mEncryptedDb = new BridgeEncryptedDatabase(context,
                     SqlCipherDatabaseHelper.DEFAULT_NAME,
                     null,
