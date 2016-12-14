@@ -81,18 +81,14 @@ public class MPowerUiManager extends UiManager {
     @Override
     public Step getInclusionCriteriaStep(Context context)
     {
-        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat("true","false");
+        BooleanAnswerFormat booleanAnswerFormat = new BooleanAnswerFormat("Yes","No");
 
         QuestionStep ageStep = new QuestionStep("signupInclusionAgeStep",
-                "Are you over 18 years of age?",
-                booleanAnswerFormat);
-
-        QuestionStep diagnosisStep = new QuestionStep("signupInclusionDiagnosisStep",
-                "Have you been diagnosed with pre-diabetes or diabetes?",
+                "Are you 18 or older?",
                 booleanAnswerFormat);
 
         QuestionStep englishStep = new QuestionStep("signupInclusionEnglishStep",
-                "Can you read and understand English in order to provide informed consent and to follow the instructions?",
+                "Are you comfortable reading and writing on your Android phone in English?",
                 booleanAnswerFormat);
 
         QuestionStep usaStep = new QuestionStep("signupInclusionUsaStep",
@@ -105,7 +101,7 @@ public class MPowerUiManager extends UiManager {
         // Set items on FormStep
         eligibilityFormStep.setStepTitle(R.string.rss_eligibility);
         eligibilityFormStep.setOptional(false);
-        eligibilityFormStep.setFormSteps(ageStep, diagnosisStep, englishStep, usaStep);
+        eligibilityFormStep.setFormSteps(ageStep, usaStep, englishStep);
 
         return eligibilityFormStep;
 
@@ -132,8 +128,6 @@ public class MPowerUiManager extends UiManager {
         {
             Map mapStepResult = stepResult.getResults();
             Boolean answer = getBooleanAnswer(mapStepResult, "signupInclusionAgeStep");
-            if (answer == false) return false;
-            answer = getBooleanAnswer(mapStepResult, "signupInclusionDiagnosisStep");
             if (answer == false) return false;
             answer = getBooleanAnswer(mapStepResult, "signupInclusionEnglishStep");
             if (answer == false) return false;
