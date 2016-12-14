@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MPower">
 
         <activity
-            android:name="org.researchstack.skin.ui.SplashActivity"
+            android:name="org.sagebase.mpower.SplashActivity"
             android:label="@string/app_name">
             <!--android:theme="@style/Theme.Sample.Splash">-->
             <intent-filter>
@@ -31,7 +31,7 @@
             android:theme="@style/Theme.MPower.Main"/>
 
         <activity
-            android:name="org.researchstack.skin.ui.OnboardingActivity"
+            android:name="org.sagebase.mpower.OnboardingActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MPower.Onboarding"/>
 
