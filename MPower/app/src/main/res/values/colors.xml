@@ -12,4 +12,6 @@
     <color name="text_color_settings_summary">@color/dark_gray</color>
     <color name="tab_text_color">@color/dark_gray</color>
 
+    <color name="bullet_color">#000000</color>
+
 </resources>

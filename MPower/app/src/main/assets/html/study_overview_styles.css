@@ -8,6 +8,27 @@ body {
 	font-weight:normal;
 }
 
+h1 {
+	font-family: '-apple-system', 'HelveticaNeue-Light', 'HelveticaNeue light', 'Helvetica Neue';
+	font-size: 19pt;
+	color: #5837B6;
+	line-height: normal;
+	font-weight: 200;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: center;
+}
+
+h2 {
+	font-family: '-apple-system', 'HelveticaNeue-Light', 'HelveticaNeue light', 'Helvetica Neue';
+	font-size: 19pt;
+	line-height: normal;
+	font-weight: 200;
+	padding-top: 0px;
+	padding-bottom: 0px;
+  text-align: center;
+}
+
 h3 {
 	padding-top:12px;
 	padding-bottom:12px;
@@ -51,6 +72,22 @@ img {
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
+}
+
+.subtitle {
+  font-weight: bold;
+  text-align:center;
+}
+
+.email {
+  text-align:center;
+  font-weight: normal;
+}
+
+.swipe {
+  text-align:center;
+  font-weight: normal;
+  font-size: 10pt;
 }
 
 

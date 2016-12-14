@@ -5,9 +5,8 @@
   "logo_name": "logo_research_institute",
   "questions": [
     {
-      "title": "Welcome to mPower",
-      "details": "A Parkinson Disease Research Study",
-      "show_consent": "yes"
+      "title": "mPower",
+      "details": "study_overview_landing"
     },
     {
       "title": "About This Study",
