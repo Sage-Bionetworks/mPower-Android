@@ -1,27 +1,58 @@
 package org.sagebionetworks.bridge.researchstack;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
 import org.researchstack.skin.AppPrefs;
 import org.researchstack.skin.PermissionRequestManager;
-import org.sagebase.mpower.MainApplication;
+import org.sagebase.mpower.*;
 
 /**
  * Created by TheMDP on 12/12/16.
  */
 
 public class MPowerPermissionRequestManager extends PermissionRequestManager {
+
+    public static final String PERMISSION_NOTIFICATIONS = "mPower.permission.NOTIFICATIONS";
+
     private static final int RESULT_REQUEST_CODE_NOTIFICATION = 143;
+
+    public MPowerPermissionRequestManager() {
+        // If Build is M or >, add needed permissions
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
+            PermissionRequestManager.PermissionRequest location = new PermissionRequestManager.PermissionRequest(Manifest.permission.ACCESS_FINE_LOCATION,
+                    org.sagebase.mpower.R.drawable.rss_ic_location_24dp,
+                    org.sagebase.mpower.R.string.rss_permission_location_title,
+                    org.sagebase.mpower.R.string.rss_permission_location_desc);
+            location.setIsBlockingPermission(true);
+            location.setIsSystemPermission(true);
+
+            addPermission(location);
+        }
+
+        // We have some unique permissions that tie into Settings. You will need
+        // to handle the UI for this permission along w/ storing the result.
+        PermissionRequestManager.PermissionRequest notifications =
+                new PermissionRequestManager.PermissionRequest(
+                        PERMISSION_NOTIFICATIONS,
+                        org.sagebase.mpower.R.drawable.rss_ic_notification_24dp,
+                        org.sagebase.mpower.R.string.rss_permission_notification_title,
+                        org.sagebase.mpower.R.string.rss_permission_notification_desc
+                );
+        addPermission(notifications);
+    }
 
     @Override
     public boolean hasPermission(Context context, String permissionId)
     {
         switch(permissionId) {
-            case MainApplication.PERMISSION_NOTIFICATIONS:
+            case PERMISSION_NOTIFICATIONS:
                 return AppPrefs.getInstance(context).isTaskReminderEnabled();
             default: // This is a system permission, simply ask the system
                 return ContextCompat.checkSelfPermission(context, permissionId) == PackageManager.PERMISSION_GRANTED;
@@ -40,7 +71,7 @@ public class MPowerPermissionRequestManager extends PermissionRequestManager {
     {
         // SampleApplication.PERMISSION_NOTIFICATIONS is our non-system permission so we return true
         // if permissionId's are the same
-        return permissionId.equals(MainApplication.PERMISSION_NOTIFICATIONS);
+        return permissionId.equals(PERMISSION_NOTIFICATIONS);
     }
 
     /**
