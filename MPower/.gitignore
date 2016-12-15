@@ -52,6 +52,9 @@ tasks.xml
 .idea/modules.xml
 .iml
 
+# We do all project config in gradle, so don't need anything in .idea
+.idea/*
+
 # CDT-specific
 */.cproject
 
