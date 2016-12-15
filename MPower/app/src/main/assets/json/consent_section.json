@@ -1,9 +1,9 @@
 {
   "documentProperties": {
-    "htmlDocument": "asthma_fullconsent",
-    "investigatorShortDescription": "Mount Sinai",
-    "investigatorLongDescription": "Mount Sinai and its partners",
-    "htmlContent": "consent_section_html_sharing_rsch",
+    "htmlDocument" : "PD_fullconsent",
+    "investigatorShortDescription": "Sage Bionetworks",
+    "investigatorLongDescription": "Sage Bionetworks and its partners",
+    "htmlContent": "consent_19sharing_rsch",
     "requiresSignature": true,
     "requiresName": true,
     "requiresBirthdate": true
@@ -28,25 +28,25 @@
       },
       {
         "identifier": "deidentified",
-        "title": "My name will be stored with my study data.",
+        "prompt": "My name will be stored with my study data.",
         "type": "boolean",
         "expectedAnswer": false
       },
       {
         "identifier": "retraction",
-        "title": "I decide to share my data with qualified researchers. Then I change my mind. Can my data be deleted from their studies?",
+        "prompt": "I decide to share my data with qualified researchers. Then I change my mind. Can my data be deleted from their studies?",
         "type": "boolean",
         "expectedAnswer": false
       },
       {
         "identifier": "stressLevel",
-        "title": "The survey questions may be stressful for some people.",
+        "prompt": "The survey questions may be stressful for some people.",
         "type": "boolean",
         "expectedAnswer": true
       },
       {
         "identifier": "stopParticipating",
-        "title": "I can pause/resume participating at any time",
+        "prompt": "I can pause/resume participating at any time",
         "type": "boolean",
         "expectedAnswer": true
       }
@@ -54,7 +54,7 @@
     "successTitle": "Great Job!",
     "successMessage": "You answered all of the questions correctly. Tap Next to continue.",
     "failureTitle": "Try again",
-    "failureMessage": "Unfortunately, you answered one or more questions incorrectly on the quiz. We need you to repeat the quiz to make sure you understand what you need to know about the study. Please read the consent information and take the quiz again.",
+    "failureMessage": "You answered one or more questions wrong. We want to make sure you understand what this study is about and what is involved. Review the information screens and try again.",
     "allowedFailures": 0,
     "incorrectIcon": "rss_ic_quiz_retry",
     "correctIcon": "rss_ic_quiz_valid"
