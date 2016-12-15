@@ -1,9 +1,9 @@
 {
   "documentProperties": {
-    "htmlDocument": "asthma_fullconsent",
-    "investigatorShortDescription": "Mount Sinai",
-    "investigatorLongDescription": "Mount Sinai and its partners",
-    "htmlContent": "consent_section_html_sharing_rsch",
+    "htmlDocument" : "PD_fullconsent",
+    "investigatorShortDescription": "Sage Bionetworks",
+    "investigatorLongDescription": "Sage Bionetworks and its partners",
+    "htmlContent": "consent_19sharing_rsch",
     "requiresSignature": true,
     "requiresName": true,
     "requiresBirthdate": true
@@ -22,117 +22,173 @@
         "type": "singleChoiceText",
         "textChoices": [
           "Understand the fluctuations of Parkinson disease symptoms",
-          "Treating Parkinson disease"
+          "Give medical advice and diagnose people with Parkinson disease"
         ],
-        "expectedAnswer": "0"
+        "expectedAnswer": 0
       },
       {
-        "identifier": "question1",
-        "prompt": "If my asthma gets worse during the study I should stop relying on the app and see my doctor.",
+        "identifier": "deidentified",
+        "prompt": "My name will be stored with my study data.",
         "type": "boolean",
-        "positiveFeedback": "The app does not replace your usual medical care. Continue asthma care with your usual doctor at all times and let him/her know you are in the study. If your asthma is getting worse at any time, including during the study, please contact your doctor.",
-        "negativeFeedback": "The app does not replace your usual medical care. Continue asthma care with your usual doctor at all times and let him/her know you are in the study. If your asthma is getting worse at any time, including during the study, please contact your doctor.",
-        "expectedAnswer": "true"
+        "expectedAnswer": false
       },
       {
-        "identifier": "question2",
-        "prompt": "Once I start participating in the study, I am free to withdraw at any time but the data I contributed will not be deleted.",
+        "identifier": "retraction",
+        "prompt": "I decide to share my data with qualified researchers. Then I change my mind. Can my data be deleted from their studies?",
         "type": "boolean",
-        "positiveFeedback": "You are free to withdraw at any time from the study. To withdraw, choose “Leave Study” on the app's “Profile” page, delete the app from your phone, or contact the researchers. Data you have contributed up until you withdraw will stay in the study but no further data will be gathered.",
-        "negativeFeedback": "You are free to withdraw at any time from the study. To withdraw, choose “Leave Study” on the app's “Profile” page, delete the app from your phone, or contact the researchers. Data you have contributed up until you withdraw will stay in the study but no further data will be gathered.",
-        "expectedAnswer": "true"
+        "expectedAnswer": false
       },
       {
-        "identifier": "question3",
-        "prompt": "This app is a research study and not a commercial application.",
-        "positiveFeedback": "This is a research study and not a commercial application.",
-        "negativeFeedback": "This is a research study and not a commercial application.",
+        "identifier": "stressLevel",
+        "prompt": "The survey questions may be stressful for some people.",
         "type": "boolean",
-        "expectedAnswer": "true"
+        "expectedAnswer": true
+      },
+      {
+        "identifier": "stopParticipating",
+        "prompt": "I can pause/resume participating at any time",
+        "type": "boolean",
+        "expectedAnswer": true
       }
     ],
     "successTitle": "Great Job!",
     "successMessage": "You answered all of the questions correctly. Tap Next to continue.",
     "failureTitle": "Try again",
-    "failureMessage": "Unfortunately, you answered one or more questions incorrectly on the quiz. We need you to repeat the quiz to make sure you understand what you need to know about the study. Please read the consent information and take the quiz again.",
+    "failureMessage": "You answered one or more questions wrong. We want to make sure you understand what this study is about and what is involved. Review the information screens and try again.",
     "allowedFailures": 0,
     "incorrectIcon": "rss_ic_quiz_retry",
     "correctIcon": "rss_ic_quiz_valid"
   },
-  "sections": [
+  "sections":
+  [
     {
-      "sectionType": "overview",
-      "sectionSummary": "Mount Sinai is doing a research study about whether an asthma app on your iPhone will help you to monitor your asthma. This simple walkthrough will help you to understand the study, the impact it will have on your life, and will allow you to provide consent to participate.",
-      "sectionHtmlContent": "consent_section_html_welcome"
+      "sectionType" : "overview",
+      "sectionTitle" : "Welcome",
+      "sectionSummary" : "This overview explains the research study. After you learn about the study, you can choose if you would like to participate. This may take about 20 minutes to complete.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_1welcome"
     },
     {
-      "sectionType": "custom",
+      "sectionType" : "custom",
       "sectionTitle": "We'll Test Your Understanding",
-      "sectionSummary": "We’ll walk you through some information on our Asthma research study, and  provide a short quiz at the end to confirm your understanding.",
-      "sectionHtmlContent": "consent_section_html_quiz_headsup"
+      "sectionSummary": "It is important to know what this study is about and what is involved. Before you can join, we will ask you to take a short quiz to test your understanding.",
+      "sectionImage": "quiz_image",
+      "sectionHtmlContent" : "consent_2quiz_headsup"
     },
     {
-      "sectionType": "dataGathering",
-      "sectionSummary": "This study will gather location and sensor data from your phone and personal fitness devices (such as Apple Watch) with your permission. You can choose not to do this and still participate in the study.",
-      "sectionHtmlContent": "consent_section_html_dataprocessing"
+      "sectionType" : "custom",
+      "sectionTitle": "Activities & Surveys",
+      "sectionSummary": "To understand changes in your health, we will ask you to complete surveys and simple activities daily and weekly. We will look for patterns over time.",
+      "sectionHtmlContent" : "consent_3activities",
+      "sectionImage": "00_Blank_to_Activities",
+      "sectionAnimationUrl": "00_Blank_to_Activities"
     },
     {
-      "sectionType": "privacy",
-      "sectionSummary": "To protect your privacy, we will use a random code instead of your name on your study data.",
-      "sectionHtmlContent": "consent_section_html_protectingdata"
+      "sectionType" : "custom",
+      "sectionTitle": "Sensor Data",
+      "sectionSummary": "The sensors on your phone will collect data when you use the app. Some people wear fitness trackers. We will ask your permission to add the data from the sensors on your fitness tracker to the study. You do not have to agree.",
+      "sectionHtmlContent" : "consent_4sensordata",
+      "sectionImage": "01_Activities_to_SensorData",
+      "sectionAnimationUrl":"01_Activities_to_SensorData"
     },
     {
-      "sectionType": "dataUse",
+      "sectionType" : "dataGathering",
+      "sectionTitle": "View Your Data Trends",
+      "sectionSummary" : "You can view your data at any time. When you look at your data you may notice patterns. Seeing health patterns can generate a wide range of emotions.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_5dataprocessing",
+      "sectionAnimationUrl":"02_SensorData_to_DataGathering"
+    },
+    {
+      "sectionType" : "privacy",
+      "sectionTitle": "Your Privacy",
+      "sectionSummary": "We will protect your privacy to the best of our ability. Your data will be encrypted on your phone. We will replace your name with a random code and store your coded study data on a secure cloud server.  But we cannot promise total privacy.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_6protectingdata"
+    },
+    {
+      "sectionType" : "dataUse",
       "sectionTitle": "Data Use",
-      "sectionSummary": "We will not share your information with any commercial third parties such as advertisers.",
-      "sectionHtmlContent": "consent_section_html_datause"
+      "sectionSummary": "Your coded study data will be used for research. It will be combined with data from other volunteers. It will be transferred to an analysis platform in the United States.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_7datause"
     },
     {
-      "sectionType": "timeCommitment",
-      "sectionSummary": "Your participation in this study will average 15 minutes each week for 6 months.",
-      "sectionHtmlContent": "consent_section_html_time"
+      "sectionType" : "timeCommitment",
+      "sectionTitle" : "Time Commitment",
+      "sectionSummary": "This study will take about 20 minutes per day. Monthly reviews may take an additional 5 minutes once a month.\n\nThe time you spend on the app may count against your mobile data plan. You can set up the app to use Wi-Fi connections instead.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_8time"
     },
     {
-      "sectionType": "studySurvey",
-      "sectionTitle": "Study Tasks",
-      "sectionSummary": "You will answer a few simple daily and weekly questions about your asthma. These questions should only take a few minutes.",
-      "sectionHtmlContent": "consent_section_html_study_survey"
+      "sectionType" : "studySurvey",
+      "sectionTitle" : "Study Surveys",
+      "sectionSummary": "Surveys are an important part of this research study. We will ask you to complete weekly and monthly surveys about your health.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_9study_survey"
     },
     {
-      "sectionType": "studyTasks",
-      "sectionTitle": "Potential Benefits",
-      "sectionSummary": "You could learn more about asthma and monitoring your health that may help you to be healthier. It is possible that neither you nor others may benefit from taking part in this research.",
-      "sectionHtmlContent": "consent_section_html_study_task"
+      "sectionType" : "studyTasks",
+      "sectionTitle" : "Potential Benefits",
+      "sectionSummary": "Your participation in this study could help researchers understand PD better. You may or may not benefit from this research study.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_10study_task"
     },
     {
-      "sectionType": "withdrawing",
-      "sectionTitle": "Withdrawing",
-      "sectionSummary": "There will be no penalty to you if you decide not to take part in this study. You can withdraw your consent and discontinue participation at any time.",
-      "sectionHtmlContent": "consent_section_html_withdrawing"
+      "sectionType" : "withdrawing",
+      "sectionTitle" : "Potential Risks",
+      "sectionSummary" : "If you participate in this study, your privacy may be at risk. There may be other risks to participating that we do not know about yet.",
+      "sectionLearnMoreButtonTitle" : "Learn more",
+      "sectionHtmlContent" : "consent_11potential_risk"
     },
     {
-      "sectionType": "custom",
-      "sectionTitle": "Secure Database",
-      "sectionSummary": "Your study data will be stored in a manner that maintains strict information technology procedures to safeguard your information and to prevent improper access.",
-      "sectionImage": "rsb_consent_section_potential_benefits_alt",
-      "sectionHtmlContent": "consent_section_html_security",
-      "sectionAnimationUrl": "10_PotentialBenifits_Alt"
+      "sectionType" : "custom",
+      "sectionTitle": "NOT Medical Care",
+      "sectionSummary": "mPower is not used for medical care. It is a research study. The mPower app is not a diagnosis tool. We do not give medical advice or treatment recommendations.",
+      "sectionHtmlContent" : "consent_12medical_care",
+      "sectionImage": "consent_medicalCare"
     },
     {
-      "sectionType": "custom",
-      "sectionTitle": "Issues to Consider",
-      "sectionSummary": "This Asthma app does not replace your usual medical care. Continue your asthma care with your usual doctor.",
-      "sectionImage": "rsb_consent_section_visiting_doctor",
-      "sectionHtmlContent": "consent_section_html_talktodoctor",
-      "sectionAnimationUrl": "11_VisitingDoctor"
-    },
-    {
-      "sectionType": "custom",
+      "sectionType" : "custom",
       "sectionTitle": "Follow Up",
-      "sectionSummary": "Study investigators may contact you as needed for feedback and further mobile health app development needs if you opt in at the conclusion of the study.",
-      "sectionImage": "rsb_consent_section_recontact",
-      "sectionHtmlContent": "consent_section_html_recontact",
-      "sectionAnimationUrl": "12_Recontact"
+      "sectionSummary": "We might want to reach out to you.\n\nYou can opt out of these follow up notifications at any time.",
+      "sectionHtmlContent" : "consent_13follow_up",
+      "sectionImage": "consent_followUp"
+    },
+    {
+      "sectionType" : "custom",
+      "sectionTitle": "Pause or Quit",
+      "sectionSummary": "Your participation is voluntary. You can pause your participation or you can leave the study at any time.",
+      "sectionHtmlContent" : "consent_14withdrawl",
+      "sectionImage": "consent_exitArrow"
+    },
+    {
+      "sectionType" : "custom",
+      "sectionTitle": "Think It Over",
+      "sectionSummary": "Your participation is voluntary. Take time to think it over and ask questions.",
+      "sectionHtmlContent" : "consent_15think",
+      "sectionImage": "consent_hand"
+    },
+    {
+      "sectionType" : "custom",
+      "sectionTitle": "Future Independent Research",
+      "sectionSummary": "Your coded study data is valuable. In addition to this study, it could be used for other research. You get to decide whether or not to share your data for other research. These screens explain more about this option.",
+      "sectionHtmlContent" : "consent_16future",
+      "sectionImage": "consent_dataDots"
+    },
+    {
+      "sectionType" : "custom",
+      "sectionTitle": "Sharable Data",
+      "sectionSummary": "Only coded study data are sharable. Coded study data do not include your name or email address. A random code is used instead.",
+      "sectionHtmlContent" : "consent_17data_sharing",
+      "sectionImage": "consent_dataSharing"
+    },
+    {
+      "sectionType" : "custom",
+      "sectionTitle": "Qualified Researchers",
+      "sectionSummary": "With your permission, we will share your coded study data with qualified researchers worldwide. We have rules to qualify researchers. However, we do not control the research that they do with the shared data.",
+      "sectionHtmlContent" : "consent_18researchers",
+      "sectionImage": "consent_qualifiedResearchers"
     }
   ]
 }
