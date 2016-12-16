@@ -11,6 +11,8 @@
 build/
 gen/
 
+#Exclude .pem files to make sure they aren't checked in
+*.pem
 
 # Android application package file for distribution
 *.apk
