@@ -1,9 +1,7 @@
 include ':app'
 include ':backbone'
 project(':backbone').projectDir = file('ResearchStack/backbone')
-include ':skin'
-project(':skin').projectDir = file('ResearchStack/skin')
-include ':researchstack-sdk'
-project(':researchstack-sdk').projectDir = file('BridgeAndroidSdk/researchstack-sdk')
+include 'ResearchStack:skin'
+include 'BridgeAndroidSDK:researchstack-sdk'
 include ':android-sdk'
 project(':android-sdk').projectDir = file('BridgeAndroidSdk/android-sdk')
