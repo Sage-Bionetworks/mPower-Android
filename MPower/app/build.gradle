@@ -14,6 +14,7 @@ android {
         buildConfigField 'String', 'STUDY_ID', studyId
         buildConfigField 'String', 'STUDY_NAME', studyName
         buildConfigField 'String', 'BRIDGE_URL', bridgeUrl
+        buildConfigField 'String', 'CERTIFICATE_NAME', certificateName
     }
     buildTypes {
         release {
