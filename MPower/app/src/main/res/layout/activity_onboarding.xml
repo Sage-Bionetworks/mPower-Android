@@ -62,7 +62,7 @@
         android:layout_height="96dp"
         android:layout_alignParentBottom="true"
         android:layout_alignTop="@+id/intro_buttons"
-        android:background="@color/rsb_submit_bar_gray"
+        android:background="@color/colorAccent"
     />
 
     <FrameLayout
@@ -100,11 +100,11 @@
             <LinearLayout
                 android:id="@id/bullet_container"
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_height="28dp"
                 android:layout_alignParentBottom="true"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:background="@color/rsb_submit_bar_gray">
+                android:background="@color/colorAccent">
             </LinearLayout>
         </RelativeLayout>
     </FrameLayout>
@@ -129,26 +129,23 @@
         />
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/intro_sign_up"
-            style="@style/Button.Skin.Onboarding"
+            style="@style/Widget.MPower.Onboarding.Button"
             android:onClick="onSignUpClicked"
-            android:text="@string/rss_join_study"
+            android:text="@string/join_study"
+            android:textAllCaps="false"
         />
         <Space android:layout_width="16dp" android:layout_height="match_parent"/>
     </LinearLayout>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/intro_sign_in"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
+        style="@style/Widget.MPower.Onboarding.Button.SignIn"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:clickable="true"
         android:gravity="center_vertical"
         android:onClick="onSignInClicked"
-        android:text="@string/rss_already_participating"
+        android:text="@string/onboarding_sign_in"
         android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
     />
 </RelativeLayout>
