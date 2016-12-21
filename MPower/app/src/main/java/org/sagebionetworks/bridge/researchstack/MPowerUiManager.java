@@ -141,7 +141,7 @@ public class MPowerUiManager extends UiManager {
     @Override
     public boolean isConsentSkippable()
     {
-        return true;
+        return false;
     }
 
 }
