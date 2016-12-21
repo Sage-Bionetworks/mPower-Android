@@ -4,4 +4,6 @@
 
     <string name="task_inital_toolbar_title">task_inital_toolbar_title</string>
 
+    <string name="onboarding_sign_in">Sign In</string>
+    <string name="join_study">Join Study</string>
 </resources>
