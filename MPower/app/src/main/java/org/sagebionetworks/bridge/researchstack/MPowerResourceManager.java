@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import org.researchstack.backbone.ResourcePathManager;
 import org.researchstack.skin.ResourceManager;
 import org.researchstack.skin.model.ConsentSectionModel;
+import org.researchstack.skin.model.InclusionCriteriaModel;
 import org.researchstack.skin.model.SchedulesAndTasksModel;
 import org.researchstack.skin.model.SectionModel;
 import org.researchstack.skin.model.StudyOverviewModel;
@@ -88,6 +89,14 @@ public class MPowerResourceManager extends ResourceManager {
                 BASE_PATH_JSON_SURVEY,
                 taskFileName,
                 TaskModel.class);
+    }
+
+    @Override
+    public Resource getInclusionCriteria() {
+        return new Resource(Resource.TYPE_JSON,
+                BASE_PATH_JSON,
+                "eligibility_requirements",
+                InclusionCriteriaModel.class);
     }
 
     @Override
