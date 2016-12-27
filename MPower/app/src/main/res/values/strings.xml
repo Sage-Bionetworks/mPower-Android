@@ -6,4 +6,6 @@
 
     <string name="onboarding_sign_in">Sign In</string>
     <string name="join_study">Join Study</string>
+
+    <string name="rss_share_message_format">Please take a look at Parkinson mPower, a research study app about Parkinson Disease.  Download it for Android at <a>TBD</a></string>
 </resources>
