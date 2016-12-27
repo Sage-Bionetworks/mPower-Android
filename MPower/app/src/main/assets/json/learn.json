@@ -1,60 +1,41 @@
 {
-  "logo_name": "logo_research_institute",
-  "title": "mPower",
-
   "items": [
+
     {
+      "section_title": "Info",
       "row_items": [
-
         {
-          "title":"About This Study",
-          "details":"learn_aboutstudy",
-          "icon_image":"ic_smartphone",
-          "tint_color" : "purple"
-        },
-
-        {
-          "title":"How This Study Works",
-          "details":"learn_howstudyworks",
-          "icon_image":"ic_help_outline",
-          "tint_color" : "purple"
-        },
-
-        {
-          "title":"Who Can Participate",
-          "details":"learn_eligibletoparticipate",
-          "icon_image":"ic_people_outline",
-          "tint_color" : "purple"
+          "title": "About This Study",
+          "details": "learn_aboutstudy"
         },
         {
-          "title":"Who Is Running This Study",
-          "details":"learn_whoisrunning",
-          "icon_image":"ic_local_hospital",
-          "tint_color" : "purple"
+          "title": "How This Study Works",
+          "details": "learn_howstudyworks"
         },
         {
-          "title":"Spread the Word",
-          "details":"share",
-          "icon_image":"ic_share",
-          "tint_color" : "purple"
+          "title": "Who Can Participate?",
+          "details": "learn_eligibletoparticipate"
         },
         {
-          "title": "Life with Parkinson Disease",
-          "details": "learn_lifewithpd",
-          "icon_image": "logo_disease",
-          "tint_color": "purple"
+          "title": "Who Is Running This Study?",
+          "details": "learn_whoisrunning"
+        }
+      ]
+    },
+    {
+      "section_title": "Resources",
+      "row_items": [
+        {
+          "title": "Robot Overview",
+          "details": "learn_overview"
         },
         {
-          "title": "Symptoms",
-          "details": "learn_treatment",
-          "icon_image": "icon_symptoms",
-          "tint_color": "purple"
+          "title": "Treatment Options",
+          "details": "learn_treatment"
         },
         {
           "title": "Online Resources",
-          "details": "learn_onlineresources",
-          "icon_image": "ic_public",
-          "tint_color": "purple"
+          "details": "learn_onlineresources"
         }
       ]
     }
