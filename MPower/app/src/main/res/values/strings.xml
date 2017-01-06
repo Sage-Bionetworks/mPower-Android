@@ -4,6 +4,8 @@
 
     <string name="task_inital_toolbar_title">task_inital_toolbar_title</string>
 
-    <string name="rss_eligibility_you_are_ineligible">Unfortunately, you are ineligible to join this study.\n\nHowever, you can help spread the word and share the app with others.
-    </string>
+    <string name="onboarding_sign_in">Sign In</string>
+    <string name="join_study">Join Study</string>
+
+    <string name="rss_share_message_format">Please take a look at Parkinson mPower, a research study app about Parkinson Disease.  Download it for Android at <a>TBD</a></string>
 </resources>
