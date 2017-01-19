@@ -1,12 +1,8 @@
 package org.sagebase.mpower;
 
-import android.Manifest;
-import android.app.Application;
 import android.content.Context;
-import android.os.Build;
 import android.support.multidex.MultiDex;
 
-import org.researchstack.skin.PermissionRequestManager;
 import org.researchstack.skin.ResearchStack;
 import org.sagebionetworks.bridge.android.BridgeApplication;
 import org.sagebionetworks.bridge.researchstack.MPowerResearchStack;

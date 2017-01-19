@@ -4,11 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import org.researchstack.backbone.utils.LogExt;
-import org.researchstack.backbone.utils.ObservableUtils;
-import org.researchstack.skin.AppPrefs;
-import org.researchstack.skin.DataProvider;
-import org.researchstack.skin.notification.TaskAlertReceiver;
-import org.researchstack.skin.ui.*;
 import org.researchstack.skin.ui.MainActivity;
 
 /**

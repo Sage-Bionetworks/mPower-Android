@@ -1,13 +1,8 @@
 package org.sagebase.mpower;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.AppCompatButton;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,17 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.researchstack.backbone.utils.ResUtils;
-import org.researchstack.backbone.utils.TextUtils;
-import org.researchstack.skin.ResourceManager;
+import org.researchstack.backbone.ResourceManager;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.model.StudyOverviewModel;
+import org.researchstack.skin.ui.OverviewActivity;
 import org.researchstack.skin.ui.adapter.OnboardingPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class OnboardingActivity extends org.researchstack.skin.ui.OnboardingActivity {
+public class OnboardingActivity extends OverviewActivity {
 
   private View      pagerFrame;
   private View      pagerContainer;
@@ -154,5 +149,4 @@ public class OnboardingActivity extends org.researchstack.skin.ui.OnboardingActi
     signUp.setActivated(true);
 
   }
-
 }

@@ -1,0 +1,62 @@
+package org.sagebionetworks.bridge.researchstack;
+
+import android.content.Context;
+
+import com.google.gson.GsonBuilder;
+
+import org.researchstack.backbone.model.survey.CustomSurveyItem;
+import org.researchstack.backbone.model.survey.SurveyItem;
+import org.researchstack.backbone.model.survey.SurveyItemAdapter;
+import org.researchstack.backbone.model.survey.factory.SurveyFactory;
+import org.researchstack.backbone.step.CustomStep;
+import org.researchstack.skin.onboarding.OnboardingManager;
+
+/**
+ * Created by TheMDP on 1/12/17.
+ *
+ * This class is overridden to demonstrate to the developer how to convert
+ * custom JSON SurveyItem objects in "onboarding.json" into CustomSteps used
+ * in the onboarding process
+ */
+
+public class MPowerOnboardingManager extends OnboardingManager {
+
+    public MPowerOnboardingManager(Context context) {
+        super(context);
+    }
+
+    /**
+     * Override to register custom SurveyItemAdapters,
+     * but make sure that the adapter extends from SurveyItemAdapter, and only overrides
+     * the method getCustomClass()
+     */
+    @Override
+    public void registerSurveyItemAdapter(GsonBuilder builder) {
+        builder.registerTypeAdapter(SurveyItem.class, new CustomSurveyItemAdapter());
+    }
+
+    /**
+     * @param item CustomSurveyItem, which will be the type returns from our CustomSurveyItemAdapter
+     * @param factory either a SurveyFactory, or ConsentDocumentFactory subclass
+     * @return a CustomStep object, which can be anything we want it to be
+     */
+    @Override
+    public CustomStep createCustomStep(CustomSurveyItem item, SurveyFactory factory) {
+        // Since we dont have any in mPower, just go with default implementation of this instance of SurveyFactory
+        return factory.createCustomStep(item);
+    }
+
+    class CustomSurveyItemAdapter extends SurveyItemAdapter {
+        /**
+         * This can be overridden to provide custom survey item deserialization
+         * the default deserialization is a CustomSurveyItem, or a
+         * CustomInstructionSurveyItem if customType ends with ".instruction"
+         * @param customType used to map to different types of survey items
+         * @return type of survey item to create from the custom class
+         */
+        @Override
+        public Class<? extends CustomSurveyItem> getCustomClass(String customType) {
+            return super.getCustomClass(customType);
+        }
+    }
+}

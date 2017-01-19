@@ -36,6 +36,12 @@
             android:theme="@style/Theme.MPower.Onboarding"/>
 
         <activity
+            android:name="org.researchstack.skin.ui.OnboardingTaskActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.MPower.Survey"/>
+
+        <activity
             android:name="org.researchstack.backbone.ui.ViewTaskActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize"
@@ -53,7 +59,7 @@
 
         <activity
             android:name="org.researchstack.skin.ui.EmailVerificationActivity"
-            android:label="@string/rss_confirm"
+            android:label="@string/rsb_confirm"
             android:theme="@style/Theme.MPower.Survey"/>
 
         <activity

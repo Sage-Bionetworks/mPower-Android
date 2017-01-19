@@ -3,13 +3,15 @@ package org.sagebionetworks.bridge.researchstack;
 import android.text.TextUtils;
 
 import org.researchstack.backbone.ResourcePathManager;
-import org.researchstack.skin.ResourceManager;
+import org.researchstack.backbone.model.ConsentDocument;
+import org.researchstack.backbone.ResourceManager;
 import org.researchstack.skin.model.ConsentSectionModel;
 import org.researchstack.skin.model.InclusionCriteriaModel;
-import org.researchstack.skin.model.SchedulesAndTasksModel;
+import org.researchstack.backbone.model.SchedulesAndTasksModel;
 import org.researchstack.skin.model.SectionModel;
 import org.researchstack.skin.model.StudyOverviewModel;
 import org.researchstack.skin.model.TaskModel;
+import org.researchstack.skin.onboarding.OnboardingManager;
 
 /**
  * Created by TheMDP on 12/12/16.
@@ -51,7 +53,7 @@ public class MPowerResourceManager extends ResourceManager {
     {
         return new Resource(Resource.TYPE_JSON,
                 BASE_PATH_JSON,
-                "consent_section",
+                "consent",
                 ConsentSectionModel.class);
     }
 
@@ -97,6 +99,21 @@ public class MPowerResourceManager extends ResourceManager {
                 BASE_PATH_JSON,
                 "eligibility_requirements",
                 InclusionCriteriaModel.class);
+    }
+
+    @Override
+    public Resource getOnboardingManager() {
+        return new Resource(Resource.TYPE_JSON,
+                BASE_PATH_JSON,
+                "onboarding",
+                OnboardingManager.class);
+    }
+
+    public Resource getConsent() {
+        return new Resource(Resource.TYPE_JSON,
+                BASE_PATH_JSON,
+                "consent",
+                ConsentDocument.class);
     }
 
     @Override
