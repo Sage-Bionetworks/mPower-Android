@@ -14,7 +14,6 @@ import org.sagebase.mpower.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by TheMDP on 12/12/16.
@@ -25,8 +24,7 @@ public class MPowerUiManager extends UiManager {
      * @return List of ActionItems w/ Fragment class items
      */
     @Override
-    public List<ActionItem> getMainTabBarItems()
-    {
+    public List<ActionItem> getMainTabBarItems() {
         List<ActionItem> navItems = new ArrayList<>();
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_activities)
@@ -50,8 +48,7 @@ public class MPowerUiManager extends UiManager {
      * is called
      */
     @Override
-    public List<ActionItem> getMainActionBarItems()
-    {
+    public List<ActionItem> getMainActionBarItems() {
         List<ActionItem> navItems = new ArrayList<>();
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_learn)
@@ -68,22 +65,19 @@ public class MPowerUiManager extends UiManager {
 
         return navItems;
     }
-    
+
     @Override
-    public Step getInclusionCriteriaStep(Context context)
-    {
+    public Step getInclusionCriteriaStep(Context context) {
         return null;
     }
 
     @Override
-    public boolean isInclusionCriteriaValid(StepResult stepResult)
-    {
+    public boolean isInclusionCriteriaValid(StepResult stepResult) {
         return false;
     }
 
     @Override
-    public boolean isConsentSkippable()
-    {
+    public boolean isConsentSkippable() {
         return true;
     }
 

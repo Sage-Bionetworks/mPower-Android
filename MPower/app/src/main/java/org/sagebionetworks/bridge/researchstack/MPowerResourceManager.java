@@ -18,18 +18,17 @@ import org.researchstack.skin.onboarding.OnboardingManager;
  */
 
 public class MPowerResourceManager extends ResourceManager {
-    private static final String BASE_PATH_HTML        = "html";
-    private static final String BASE_PATH_JSON        = "json";
-    private static final String BASE_PATH_JSON_SURVEY = "json/survey";
-    private static final String BASE_PATH_PDF         = "pdf";
-    private static final String BASE_PATH_VIDEO       = "mp4";
-
-    public static final int PEM    = 4;
-    public static final int SURVEY = 5;
+    public static final int PEM     = 4;
+    public static final int SURVEY  = 5;
+    
+    private static final String BASE_PATH_HTML          = "html";
+    private static final String BASE_PATH_JSON          = "json";
+    private static final String BASE_PATH_JSON_SURVEY   = "json/survey";
+    private static final String BASE_PATH_PDF           = "pdf";
+    private static final String BASE_PATH_VIDEO         = "mp4";
 
     @Override
-    public Resource getStudyOverview()
-    {
+    public Resource getStudyOverview() {
         return new Resource(Resource.TYPE_JSON,
                 BASE_PATH_JSON,
                 "study_overview",
@@ -37,20 +36,17 @@ public class MPowerResourceManager extends ResourceManager {
     }
 
     @Override
-    public Resource getConsentHtml()
-    {
+    public Resource getConsentHtml() {
         return new Resource(Resource.TYPE_HTML, BASE_PATH_HTML, "asthma_fullconsent");
     }
 
     @Override
-    public Resource getConsentPDF()
-    {
+    public Resource getConsentPDF() {
         return new Resource(Resource.TYPE_PDF, BASE_PATH_HTML, "study_overview_consent_form");
     }
 
     @Override
-    public Resource getConsentSections()
-    {
+    public Resource getConsentSections() {
         return new Resource(Resource.TYPE_JSON,
                 BASE_PATH_JSON,
                 "consent",
@@ -58,26 +54,22 @@ public class MPowerResourceManager extends ResourceManager {
     }
 
     @Override
-    public Resource getLearnSections()
-    {
+    public Resource getLearnSections() {
         return new Resource(Resource.TYPE_JSON, BASE_PATH_JSON, "learn", SectionModel.class);
     }
 
     @Override
-    public Resource getPrivacyPolicy()
-    {
+    public Resource getPrivacyPolicy() {
         return new Resource(Resource.TYPE_HTML, BASE_PATH_HTML, "app_privacy_policy");
     }
 
     @Override
-    public Resource getSoftwareNotices()
-    {
+    public Resource getSoftwareNotices() {
         return new Resource(Resource.TYPE_HTML, BASE_PATH_HTML, "software_notices");
     }
 
     @Override
-    public Resource getTasksAndSchedules()
-    {
+    public Resource getTasksAndSchedules() {
         return new Resource(Resource.TYPE_JSON,
                 BASE_PATH_JSON,
                 "tasks_and_schedules",
@@ -85,8 +77,7 @@ public class MPowerResourceManager extends ResourceManager {
     }
 
     @Override
-    public Resource getTask(String taskFileName)
-    {
+    public Resource getTask(String taskFileName) {
         return new Resource(Resource.TYPE_JSON,
                 BASE_PATH_JSON_SURVEY,
                 taskFileName,
@@ -120,8 +111,7 @@ public class MPowerResourceManager extends ResourceManager {
     public String generatePath(int type, String name)
     {
         String dir;
-        switch(type)
-        {
+        switch (type) {
             default:
                 dir = null;
                 break;
@@ -143,8 +133,7 @@ public class MPowerResourceManager extends ResourceManager {
         }
 
         StringBuilder path = new StringBuilder();
-        if(! TextUtils.isEmpty(dir))
-        {
+        if (!TextUtils.isEmpty(dir)) {
             path.append(dir).append("/");
         }
 
@@ -152,10 +141,8 @@ public class MPowerResourceManager extends ResourceManager {
     }
 
     @Override
-    public String getFileExtension(int type)
-    {
-        switch(type)
-        {
+    public String getFileExtension(int type) {
+        switch (type) {
             case PEM:
                 return "pem";
             case SURVEY:
@@ -165,10 +152,8 @@ public class MPowerResourceManager extends ResourceManager {
         }
     }
 
-    public static class PemResource extends ResourcePathManager.Resource
-    {
-        public PemResource(String name)
-        {
+    public static class PemResource extends ResourcePathManager.Resource {
+        public PemResource(String name) {
             super(MPowerResourceManager.PEM, null, name);
         }
     }

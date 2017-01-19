@@ -6,7 +6,7 @@
         <item name="tabTextColor">@color/tab_text_color</item>
     </style>
 
-    <style name="Widget.MPower.SubmitBar" parent="@style/Widget.Backbone.SubmitBar"/>
+    <style name="Widget.MPower.SubmitBar" parent="@style/Widget.Backbone.SubmitBar" />
 
     <style name="Base.Widget.MPower.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
@@ -19,11 +19,12 @@
     </style>
 
     <style name="Widget.MPower.Toolbar.Transparent" parent="@style/Base.Widget.MPower.Toolbar">
-        <item name="titleTextAppearance">@style/TextAppearance.Widget.MPower.Toolbar.Title.Transparent</item>
+        <item name="titleTextAppearance">
+            @style/TextAppearance.Widget.MPower.Toolbar.Title.Transparent
+        </item>
     </style>
 
-    <style name="Widget.MPower.ActionButton.Overflow"
-        parent="@style/Widget.AppCompat.ActionButton.Overflow">
+    <style name="Widget.MPower.ActionButton.Overflow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
         <item name="colorControlNormal">@android:color/white</item>
     </style>
 
@@ -46,8 +47,7 @@
         <item name="android:background">@android:color/white</item>
     </style>
 
-    <style name="TextAppearance.Widget.MPower.Toolbar.Title"
-        parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <style name="TextAppearance.Widget.MPower.Toolbar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">20sp</item>
     </style>

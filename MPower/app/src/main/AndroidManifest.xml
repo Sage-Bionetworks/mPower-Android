@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sagebase.mpower">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".MainApplication"
@@ -18,8 +18,8 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.MPower.Splash">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -28,12 +28,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MPower.Main"/>
-
-        <activity
-            android:name="org.sagebase.mpower.OnboardingActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MPower.Onboarding"/>
+            android:theme="@style/Theme.MPower.Main" />
 
         <activity
             android:name="org.researchstack.skin.ui.OnboardingTaskActivity"
@@ -44,78 +39,60 @@
         <activity
             android:name="org.researchstack.backbone.ui.ViewTaskActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.MPower.Survey"/>
-
-        <activity
-            android:name="org.researchstack.skin.ui.SignUpTaskActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MPower.Survey"/>
-
-        <activity
-            android:name="org.researchstack.skin.ui.ConsentTaskActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MPower.Survey"/>
-
-        <activity
-            android:name="org.researchstack.skin.ui.EmailVerificationActivity"
-            android:label="@string/rsb_confirm"
-            android:theme="@style/Theme.MPower.Survey"/>
+            android:theme="@style/Theme.MPower.Survey"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name="org.researchstack.backbone.ui.ViewWebDocumentActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.MPower.Survey"/>
+            android:theme="@style/Theme.MPower.Survey" />
 
         <activity
             android:name="org.researchstack.backbone.ui.ViewVideoActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|uiMode"
             android:label="@string/app_name"
-            android:theme="@style/Theme.MPower.Video"/>
+            android:theme="@style/Theme.MPower.Video" />
 
         <activity
             android:name="org.sagebase.mpower.SettingsActivity"
-            android:label="@string/rss_settings"/>
-            <!--android:theme="@style/Theme.Sample.Settings"/-->
+            android:label="@string/rss_settings" />
+        <!--android:theme="@style/Theme.Sample.Settings"/-->
 
         <activity
             android:name="org.researchstack.skin.ui.LearnActivity"
-            android:label="@string/rss_learn"/>
+            android:label="@string/rss_learn" />
 
         <activity
             android:name="org.researchstack.skin.ui.ShareActivity"
-            android:label="@string/rss_share"/>
+            android:label="@string/rss_share" />
 
         <!--<activity-->
-            <!--android:name="org.researchstack.sampleapp.NotificationPermissionActivity"-->
-            <!--android:label="@string/sample_notification_example"/>-->
+        <!--android:name="org.researchstack.sampleapp.NotificationPermissionActivity"-->
+        <!--android:label="@string/sample_notification_example"/>-->
 
         <receiver
             android:name="org.researchstack.skin.notification.TaskNotificationReceiver"
             android:enabled="true"
-            android:exported="false"
-            />
+            android:exported="false" />
 
         <receiver
             android:name="org.researchstack.skin.notification.DeviceBootReceiver"
             android:enabled="true"
-            android:exported="false"
-            >
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <receiver
             android:name="org.researchstack.skin.notification.TaskAlertReceiver"
             android:enabled="true"
-            android:exported="false"
-            >
+            android:exported="false">
             <intent-filter>
-                <action android:name="org.researchstack.skin.notification.ALERT_CREATE"/>
-                <action android:name="org.researchstack.skin.notification.ALERT_CREATE_ALL"/>
-                <action android:name="org.researchstack.skin.notification.ALERT_DELETE"/>
-                <action android:name="org.researchstack.skin.notification.ALERT_DELETE_ALL"/>
+                <action android:name="org.researchstack.skin.notification.ALERT_CREATE" />
+                <action android:name="org.researchstack.skin.notification.ALERT_CREATE_ALL" />
+                <action android:name="org.researchstack.skin.notification.ALERT_DELETE" />
+                <action android:name="org.researchstack.skin.notification.ALERT_DELETE_ALL" />
             </intent-filter>
         </receiver>
 

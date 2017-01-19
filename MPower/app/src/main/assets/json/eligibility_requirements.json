@@ -1,13 +1,11 @@
 {
-  "steps":
-  [
+  "steps": [
     {
       "identifier": "inclusionCriteria",
       "type": "toggle",
       "skipIdentifier": "eligibleInstruction",
       "skipIfPassed": true,
-      "items":
-      [
+      "items": [
         {
           "identifier": "age",
           "text": "Are you 18 or older?",

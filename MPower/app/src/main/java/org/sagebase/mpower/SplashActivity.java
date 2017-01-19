@@ -12,15 +12,15 @@ import org.researchstack.skin.ui.MainActivity;
 
 public class SplashActivity extends org.researchstack.skin.ui.SplashActivity {
 
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-  }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-  @Override
-  public void onDataReady() {
-    super.onDataReady();
-    // Init all notifications
+    @Override
+    public void onDataReady() {
+        super.onDataReady();
+        // Init all notifications
 //    sendBroadcast(new Intent(TaskAlertReceiver.ALERT_CREATE_ALL));
 //
 //    DataProvider.getInstance()
@@ -37,16 +37,16 @@ public class SplashActivity extends org.researchstack.skin.ui.SplashActivity {
 //
 //              finish();
 //            });
-  }
+    }
 
-  @Override
-  protected void launchOnboardingActivity() {
-    LogExt.i(getClass(), "launchOnboardingActivity()");
-    startActivity(new Intent(this, OnboardingActivity.class));
-  }
+    @Override
+    protected void launchOnboardingActivity() {
+        LogExt.i(getClass(), "launchOnboardingActivity()");
+        startActivity(new Intent(this, OnboardingActivity.class));
+    }
 
-  @Override
-  protected void launchMainActivity() {
-    startActivity(new Intent(this, MainActivity.class));
-  }
+    @Override
+    protected void launchMainActivity() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }
