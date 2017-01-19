@@ -1,13 +1,8 @@
 package org.sagebase.mpower;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.AppCompatButton;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.researchstack.backbone.utils.ResUtils;
-import org.researchstack.backbone.utils.TextUtils;
 import org.researchstack.skin.ResourceManager;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.model.StudyOverviewModel;
@@ -27,132 +21,130 @@ import java.util.List;
 
 public class OnboardingActivity extends org.researchstack.skin.ui.OnboardingActivity {
 
-  private View      pagerFrame;
-  private View      pagerContainer;
-  private Button    skip;
-  private Button    signUp;
-  private TextView  signIn;
-  private List<ImageView> mBullets;
-  private Drawable  activeBullet;
-  private Drawable  bullet;
+    private View pagerFrame;
+    private View pagerContainer;
+    private Button skip;
+    private Button signUp;
+    private TextView signIn;
+    private List<ImageView> mBullets;
+    private Drawable activeBullet;
+    private Drawable bullet;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    super.setContentView(R.layout.activity_onboarding);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        super.setContentView(R.layout.activity_onboarding);
 
-    ImageView logoView = (ImageView) findViewById(R.id.layout_studyoverview_landing_logo);
-    TextView titleView = (TextView) findViewById(R.id.layout_studyoverview_landing_title);
-    TextView subtitleView = (TextView) findViewById(R.id.layout_studyoverview_landing_subtitle);
+        ImageView logoView = (ImageView) findViewById(R.id.layout_studyoverview_landing_logo);
+        TextView titleView = (TextView) findViewById(R.id.layout_studyoverview_landing_title);
+        TextView subtitleView = (TextView) findViewById(R.id.layout_studyoverview_landing_subtitle);
 
-    activeBullet = getResources().getDrawable(R.drawable.bullet_active);
-    bullet = getResources().getDrawable(R.drawable.bullet);
+        activeBullet = getResources().getDrawable(R.drawable.bullet_active);
+        bullet = getResources().getDrawable(R.drawable.bullet);
 
-    LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_studyoverview_main);
-    final StudyOverviewModel model = parseStudyOverviewModel();
-    
-    titleView.setVisibility(View.GONE);
-    subtitleView.setVisibility(View.GONE);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.layout_studyoverview_main);
+        final StudyOverviewModel model = parseStudyOverviewModel();
 
-    // setup the bullets and the first/last buttons
-    int padding = (int)getResources().getDimension(R.dimen.bullet_padding);
-    mBullets = new ArrayList<ImageView>();
-    LinearLayout container = (LinearLayout)findViewById(R.id.bullet_container);
+        titleView.setVisibility(View.GONE);
+        subtitleView.setVisibility(View.GONE);
 
-    for(int i=0; i < model.getQuestions().size(); i++) {
-      ImageView img = new ImageView(this);
-      if(i==0) {
-        img.setImageDrawable(activeBullet);
-      } else {
-        img.setImageDrawable(bullet);
-      }
-      mBullets.add(img);
-      img.setPadding(padding,padding,padding,padding);
-      container.addView(img);
-    }
+        // setup the bullets and the first/last buttons
+        int padding = (int) getResources().getDimension(R.dimen.bullet_padding);
+        mBullets = new ArrayList<ImageView>();
+        LinearLayout container = (LinearLayout) findViewById(R.id.bullet_container);
 
-    signUp = (Button) findViewById(org.researchstack.skin.R.id.intro_sign_up);
-    signIn = (TextView) findViewById(org.researchstack.skin.R.id.intro_sign_in);
-
-    skip = (Button) findViewById(org.researchstack.skin.R.id.intro_skip);
-    skip.setVisibility(UiManager.getInstance().isConsentSkippable() ? View.VISIBLE : View.GONE);
-
-    int resId = ResUtils.getDrawableResourceId(this, model.getLogoName());
-    logoView.setImageResource(resId);
-
-    pagerContainer = findViewById(org.researchstack.skin.R.id.pager_container);
-    pagerContainer.setTranslationY(48);
-    pagerContainer.setAlpha(0);
-    pagerContainer.setScaleX(.9f);
-    pagerContainer.setScaleY(.9f);
-
-    pagerFrame = findViewById(org.researchstack.skin.R.id.pager_frame);
-    pagerFrame.setAlpha(0);
-
-    OnboardingPagerAdapter adapter = new OnboardingPagerAdapter(this, model.getQuestions());
-    ViewPager pager = (ViewPager) findViewById(org.researchstack.skin.R.id.pager);
-    pager.setOffscreenPageLimit(2);
-    pager.setAdapter(adapter);
-
-    pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-      @Override
-      public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-      }
-
-      @Override
-      public void onPageSelected(int position) {
-        //Log.d(LOG_TAG, "onPageSelected: " + position);
-
-        ImageView img = mBullets.get(position);
-        img.setImageDrawable(activeBullet);
-
-        for(int i=0; i < model.getQuestions().size(); i++) {
-          if(i != position) {
-            ImageView imgv = mBullets.get(i);
-            imgv.setImageDrawable(bullet);
-          }
+        for (int i = 0; i < model.getQuestions().size(); i++) {
+            ImageView img = new ImageView(this);
+            if (i == 0) {
+                img.setImageDrawable(activeBullet);
+            } else {
+                img.setImageDrawable(bullet);
+            }
+            mBullets.add(img);
+            img.setPadding(padding, padding, padding, padding);
+            container.addView(img);
         }
 
-      }
+        signUp = (Button) findViewById(org.researchstack.skin.R.id.intro_sign_up);
+        signIn = (TextView) findViewById(org.researchstack.skin.R.id.intro_sign_in);
 
-      @Override
-      public void onPageScrollStateChanged(int state) {
-      }
-    });
+        skip = (Button) findViewById(org.researchstack.skin.R.id.intro_skip);
+        skip.setVisibility(UiManager.getInstance().isConsentSkippable() ? View.VISIBLE : View.GONE);
 
-    showPager(0);
-  }
+        int resId = ResUtils.getDrawableResourceId(this, model.getLogoName());
+        logoView.setImageResource(resId);
 
-  private StudyOverviewModel parseStudyOverviewModel()
-  {
-    return ResourceManager.getInstance().getStudyOverview().create(this);
-  }
+        pagerContainer = findViewById(org.researchstack.skin.R.id.pager_container);
+        pagerContainer.setTranslationY(48);
+        pagerContainer.setAlpha(0);
+        pagerContainer.setScaleX(.9f);
+        pagerContainer.setScaleY(.9f);
 
-  private void showPager(int index)
-  {
-    pagerFrame.animate().alpha(1)
-            .setDuration(150)
-            .withStartAction(new Runnable() {
-              @Override
-              public void run() {
-                pagerFrame.setVisibility(View.VISIBLE);
-              }
-            })
-             .withEndAction(new Runnable() {
-              @Override
-              public void run() {
-                pagerContainer.animate()
-                        .translationY(0)
-                        .setDuration(100)
-                        .alpha(1)
-                        .scaleX(1)
-                        .scaleY(1);
-              }
-            });
+        pagerFrame = findViewById(org.researchstack.skin.R.id.pager_frame);
+        pagerFrame.setAlpha(0);
 
-    skip.setActivated(true);
-    signUp.setActivated(true);
+        OnboardingPagerAdapter adapter = new OnboardingPagerAdapter(this, model.getQuestions());
+        ViewPager pager = (ViewPager) findViewById(org.researchstack.skin.R.id.pager);
+        pager.setOffscreenPageLimit(2);
+        pager.setAdapter(adapter);
 
-  }
+        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //Log.d(LOG_TAG, "onPageSelected: " + position);
+
+                ImageView img = mBullets.get(position);
+                img.setImageDrawable(activeBullet);
+
+                for (int i = 0; i < model.getQuestions().size(); i++) {
+                    if (i != position) {
+                        ImageView imgv = mBullets.get(i);
+                        imgv.setImageDrawable(bullet);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+
+        showPager(0);
+    }
+
+    private StudyOverviewModel parseStudyOverviewModel() {
+        return ResourceManager.getInstance().getStudyOverview().create(this);
+    }
+
+    private void showPager(int index) {
+        pagerFrame.animate().alpha(1)
+                .setDuration(150)
+                .withStartAction(new Runnable() {
+                    @Override
+                    public void run() {
+                        pagerFrame.setVisibility(View.VISIBLE);
+                    }
+                })
+                .withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+                        pagerContainer.animate()
+                                .translationY(0)
+                                .setDuration(100)
+                                .alpha(1)
+                                .scaleX(1)
+                                .scaleY(1);
+                    }
+                });
+
+        skip.setActivated(true);
+        signUp.setActivated(true);
+
+    }
 
 }

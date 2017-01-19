@@ -1,12 +1,8 @@
 package org.sagebase.mpower;
 
-import android.Manifest;
-import android.app.Application;
 import android.content.Context;
-import android.os.Build;
 import android.support.multidex.MultiDex;
 
-import org.researchstack.skin.PermissionRequestManager;
 import org.researchstack.skin.ResearchStack;
 import org.sagebionetworks.bridge.android.BridgeApplication;
 import org.sagebionetworks.bridge.researchstack.MPowerResearchStack;
@@ -27,8 +23,7 @@ public class MainApplication extends BridgeApplication {
     }
 
     @Override
-    protected void attachBaseContext(Context base)
-    {
+    protected void attachBaseContext(Context base) {
         // This is needed for android versions < 5.0 or you can extend MultiDexApplication
         super.attachBaseContext(base);
         MultiDex.install(this);

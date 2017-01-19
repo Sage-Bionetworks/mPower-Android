@@ -3,14 +3,14 @@
 
     <item>
         <shape>
-            <solid android:color="@android:color/white"/>
+            <solid android:color="@android:color/white" />
         </shape>
     </item>
 
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/logo_disease_information_top"/>
+            android:src="@drawable/logo_disease_information_top" />
     </item>
 
 </layer-list>

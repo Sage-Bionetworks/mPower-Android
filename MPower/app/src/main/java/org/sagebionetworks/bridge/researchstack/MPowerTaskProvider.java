@@ -31,8 +31,7 @@ public class MPowerTaskProvider extends TaskProvider {
 
     private HashMap<String, Task> map = new HashMap<>();
 
-    public MPowerTaskProvider(Context context)
-    {
+    public MPowerTaskProvider(Context context) {
         put(TASK_ID_INITIAL, createInitialTask(context));
         put(TASK_ID_CONSENT, ConsentTask.create(context, TASK_ID_CONSENT));
         put(TASK_ID_SIGN_IN, new SignInTask(context));
@@ -40,19 +39,16 @@ public class MPowerTaskProvider extends TaskProvider {
     }
 
     @Override
-    public Task get(String taskId)
-    {
+    public Task get(String taskId) {
         return map.get(taskId);
     }
 
     @Override
-    public void put(String id, Task task)
-    {
+    public void put(String id, Task task) {
         map.put(id, task);
     }
 
-    private Task createInitialTask(Context context)
-    {
+    private Task createInitialTask(Context context) {
         List<Step> steps = new ArrayList<>();
         //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
         // Intro step
