@@ -16,13 +16,14 @@ import org.researchstack.skin.model.TaskModel;
  */
 
 public class MPowerResourceManager extends ResourceManager {
-    public static final int PEM = 4;
-    public static final int SURVEY = 5;
-    private static final String BASE_PATH_HTML = "html";
-    private static final String BASE_PATH_JSON = "json";
-    private static final String BASE_PATH_JSON_SURVEY = "json/survey";
-    private static final String BASE_PATH_PDF = "pdf";
-    private static final String BASE_PATH_VIDEO = "mp4";
+    public static final int PEM     = 4;
+    public static final int SURVEY  = 5;
+    
+    private static final String BASE_PATH_HTML          = "html";
+    private static final String BASE_PATH_JSON          = "json";
+    private static final String BASE_PATH_JSON_SURVEY   = "json/survey";
+    private static final String BASE_PATH_PDF           = "pdf";
+    private static final String BASE_PATH_VIDEO         = "mp4";
 
     @Override
     public Resource getStudyOverview() {
