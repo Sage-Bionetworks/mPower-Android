@@ -1,42 +1,38 @@
 {
   "logo_name": "logo_research_institute",
   "title": "mPower",
-
   "items": [
     {
       "row_items": [
-
         {
-          "title":"About This Study",
-          "details":"learn_aboutstudy",
-          "icon_image":"ic_smartphone",
-          "tint_color" : "purple"
-        },
-
-        {
-          "title":"How This Study Works",
-          "details":"learn_howstudyworks",
-          "icon_image":"ic_help_outline",
-          "tint_color" : "purple"
-        },
-
-        {
-          "title":"Who Can Participate",
-          "details":"learn_eligibletoparticipate",
-          "icon_image":"ic_people_outline",
-          "tint_color" : "purple"
+          "title": "About This Study",
+          "details": "learn_aboutstudy",
+          "icon_image": "ic_smartphone",
+          "tint_color": "purple"
         },
         {
-          "title":"Who Is Running This Study",
-          "details":"learn_whoisrunning",
-          "icon_image":"ic_local_hospital",
-          "tint_color" : "purple"
+          "title": "How This Study Works",
+          "details": "learn_howstudyworks",
+          "icon_image": "ic_help_outline",
+          "tint_color": "purple"
         },
         {
-          "title":"Spread the Word",
-          "details":"share",
-          "icon_image":"ic_share",
-          "tint_color" : "purple"
+          "title": "Who Can Participate",
+          "details": "learn_eligibletoparticipate",
+          "icon_image": "ic_people_outline",
+          "tint_color": "purple"
+        },
+        {
+          "title": "Who Is Running This Study",
+          "details": "learn_whoisrunning",
+          "icon_image": "ic_local_hospital",
+          "tint_color": "purple"
+        },
+        {
+          "title": "Spread the Word",
+          "details": "share",
+          "icon_image": "ic_share",
+          "tint_color": "purple"
         },
         {
           "title": "Life with Parkinson Disease",

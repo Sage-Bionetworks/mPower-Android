@@ -64,8 +64,7 @@
         <item name="preferenceTheme">@style/Theme.MPower.Settings.Preference</item>
     </style>
 
-    <style name="Theme.MPower.Settings.Preference"
-        parent="@style/PreferenceThemeOverlay.v14.Material">
+    <style name="Theme.MPower.Settings.Preference" parent="@style/PreferenceThemeOverlay.v14.Material">
         <item name="preferenceFragmentCompatStyle">@style/PreferenceFragment.Sample</item>
         <item name="preferenceFragmentStyle">@style/PreferenceFragment.Sample</item>
     </style>
