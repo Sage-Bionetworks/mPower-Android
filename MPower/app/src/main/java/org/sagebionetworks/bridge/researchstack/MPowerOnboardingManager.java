@@ -1,6 +1,7 @@
 package org.sagebionetworks.bridge.researchstack;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.google.gson.GsonBuilder;
 
@@ -9,7 +10,12 @@ import org.researchstack.backbone.model.survey.SurveyItem;
 import org.researchstack.backbone.model.survey.SurveyItemAdapter;
 import org.researchstack.backbone.model.survey.factory.SurveyFactory;
 import org.researchstack.backbone.step.CustomStep;
+import org.researchstack.backbone.step.Step;
+import org.researchstack.backbone.task.NavigableOrderedTask;
 import org.researchstack.skin.onboarding.OnboardingManager;
+import org.researchstack.skin.ui.OnboardingTaskActivity;
+
+import java.util.List;
 
 /**
  * Created by TheMDP on 1/12/17.
@@ -44,6 +50,18 @@ public class MPowerOnboardingManager extends OnboardingManager {
     public CustomStep createCustomStep(CustomSurveyItem item, SurveyFactory factory) {
         // Since we dont have any in mPower, just go with default implementation of this instance of SurveyFactory
         return factory.createCustomStep(item);
+    }
+
+    @Override
+    public NavigableOrderedTask createOnboardingTask(String identifier, List<Step> stepList) {
+        // here we can implement our own Task, but it needs to be a NavigableOrderedTask
+        return super.createOnboardingTask(identifier, stepList);
+    }
+
+    @Override
+    public Intent createOnboardingTaskActivityIntent(Context context, NavigableOrderedTask task) {
+        // here we can show our own custom activity, but it should be a subclass of OnboardingTaskActivity
+        return super.createOnboardingTaskActivityIntent(context, task);
     }
 
     class CustomSurveyItemAdapter extends SurveyItemAdapter {
