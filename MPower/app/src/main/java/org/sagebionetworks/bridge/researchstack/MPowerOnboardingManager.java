@@ -9,6 +9,7 @@ import org.researchstack.backbone.model.survey.CustomSurveyItem;
 import org.researchstack.backbone.model.survey.SurveyItem;
 import org.researchstack.backbone.model.survey.SurveyItemAdapter;
 import org.researchstack.backbone.model.survey.factory.SurveyFactory;
+import org.researchstack.backbone.onboarding.OnboardingManagerTask;
 import org.researchstack.backbone.step.CustomStep;
 import org.researchstack.backbone.step.Step;
 import org.researchstack.backbone.task.NavigableOrderedTask;
@@ -52,7 +53,7 @@ public class MPowerOnboardingManager extends OnboardingManager {
     }
 
     @Override
-    public NavigableOrderedTask createOnboardingTask(String identifier, List<Step> stepList) {
+    public OnboardingManagerTask createOnboardingTask(String identifier, List<Step> stepList) {
         // here we can implement our own Task, but it needs to be a NavigableOrderedTask
         return super.createOnboardingTask(identifier, stepList);
     }
