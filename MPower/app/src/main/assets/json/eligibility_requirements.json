@@ -8,19 +8,19 @@
       "items": [
         {
           "identifier": "age",
-          "text": "Are you 18 or older?",
+          "title": "Are you 18 or older?",
           "type": "boolean",
           "expectedAnswer": true
         },
         {
           "identifier": "residence",
-          "text": "Do you live in the United States of America?",
+          "title": "Do you live in the United States of America?",
           "type": "boolean",
           "expectedAnswer": true
         },
         {
           "identifier": "englishReader",
-          "text": "Are you comfortable reading and writing on your iPhone in English?",
+          "title": "Are you comfortable reading and writing on your iPhone in English?",
           "type": "boolean",
           "expectedAnswer": true
         }

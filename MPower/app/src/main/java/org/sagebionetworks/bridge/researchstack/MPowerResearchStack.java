@@ -21,7 +21,7 @@ import org.researchstack.skin.TaskProvider;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.notification.NotificationConfig;
 import org.researchstack.skin.notification.SimpleNotificationConfig;
-import org.researchstack.skin.onboarding.OnboardingManager;
+import org.researchstack.backbone.onboarding.OnboardingManager;
 
 /**
  * Created by TheMDP on 12/12/16.

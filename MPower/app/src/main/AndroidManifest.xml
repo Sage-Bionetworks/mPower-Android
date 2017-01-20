@@ -31,13 +31,13 @@
             android:theme="@style/Theme.MPower.Main" />
 
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".MPowerOverviewActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.MPower.Onboarding"/>
 
         <activity
-            android:name="org.researchstack.skin.ui.OnboardingTaskActivity"
+            android:name="org.researchstack.backbone.ui.OnboardingTaskActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.MPower.Onboarding"/>

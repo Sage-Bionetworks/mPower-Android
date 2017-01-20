@@ -42,7 +42,7 @@ public class SplashActivity extends org.researchstack.skin.ui.SplashActivity {
     @Override
     protected void launchOnboardingActivity() {
         LogExt.i(getClass(), "launchOnboardingActivity()");
-        startActivity(new Intent(this, OnboardingActivity.class));
+        startActivity(new Intent(this, MPowerOverviewActivity.class));
     }
 
     @Override

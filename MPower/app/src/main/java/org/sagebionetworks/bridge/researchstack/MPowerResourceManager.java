@@ -11,7 +11,7 @@ import org.researchstack.backbone.model.SchedulesAndTasksModel;
 import org.researchstack.skin.model.SectionModel;
 import org.researchstack.skin.model.StudyOverviewModel;
 import org.researchstack.skin.model.TaskModel;
-import org.researchstack.skin.onboarding.OnboardingManager;
+import org.researchstack.backbone.onboarding.OnboardingManager;
 
 /**
  * Created by TheMDP on 12/12/16.

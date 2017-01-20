@@ -12,8 +12,7 @@ import org.researchstack.backbone.model.survey.factory.SurveyFactory;
 import org.researchstack.backbone.step.CustomStep;
 import org.researchstack.backbone.step.Step;
 import org.researchstack.backbone.task.NavigableOrderedTask;
-import org.researchstack.skin.onboarding.OnboardingManager;
-import org.researchstack.skin.ui.OnboardingTaskActivity;
+import org.researchstack.backbone.onboarding.OnboardingManager;
 
 import java.util.List;
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class OnboardingActivity extends OverviewActivity {
+public class MPowerOverviewActivity extends OverviewActivity {
 
     private View pagerFrame;
     private View pagerContainer;
