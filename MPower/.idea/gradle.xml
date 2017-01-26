@@ -8,8 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BridgeAndroidSdk" />
             <option value="$PROJECT_DIR$/BridgeAndroidSdk/android-sdk" />
             <option value="$PROJECT_DIR$/BridgeAndroidSdk/researchstack-sdk" />
+            <option value="$PROJECT_DIR$/ResearchStack" />
             <option value="$PROJECT_DIR$/ResearchStack/backbone" />
             <option value="$PROJECT_DIR$/ResearchStack/skin" />
             <option value="$PROJECT_DIR$/app" />
