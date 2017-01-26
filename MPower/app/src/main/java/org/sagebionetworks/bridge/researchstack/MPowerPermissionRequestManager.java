@@ -9,7 +9,7 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
 import org.researchstack.skin.AppPrefs;
-import org.researchstack.skin.PermissionRequestManager;
+import org.researchstack.backbone.PermissionRequestManager;
 
 /**
  * Created by TheMDP on 12/12/16.
@@ -25,9 +25,9 @@ public class MPowerPermissionRequestManager extends PermissionRequestManager {
         // If Build is M or >, add needed permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PermissionRequestManager.PermissionRequest location = new PermissionRequestManager.PermissionRequest(Manifest.permission.ACCESS_FINE_LOCATION,
-                    org.sagebase.mpower.R.drawable.rss_ic_location_24dp,
-                    org.sagebase.mpower.R.string.rss_permission_location_title,
-                    org.sagebase.mpower.R.string.rss_permission_location_desc);
+                    R.drawable.rsb_ic_location_24dp,
+                    R.string.rsb_permission_location_title,
+                    R.string.rsb_permission_location_desc);
             location.setIsBlockingPermission(true);
             location.setIsSystemPermission(true);
 
@@ -39,9 +39,9 @@ public class MPowerPermissionRequestManager extends PermissionRequestManager {
         PermissionRequestManager.PermissionRequest notifications =
                 new PermissionRequestManager.PermissionRequest(
                         PERMISSION_NOTIFICATIONS,
-                        org.sagebase.mpower.R.drawable.rss_ic_notification_24dp,
-                        org.sagebase.mpower.R.string.rss_permission_notification_title,
-                        org.sagebase.mpower.R.string.rss_permission_notification_desc
+                        R.drawable.rss_ic_notification_24dp,
+                        R.string.rsb_permission_notification_title,
+                        R.string.rsb_permission_notification_desc
                 );
         addPermission(notifications);
     }

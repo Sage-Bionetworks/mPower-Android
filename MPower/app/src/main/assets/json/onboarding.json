@@ -1,0 +1,80 @@
+{
+  "sections" : [
+
+    {
+      "onboardingType" : "login",
+      "steps" : [
+        {
+          "identifier"   : "login",
+          "type"         : "login"
+        }
+      ]
+    },
+
+    {
+      "onboardingType" : "eligibility",
+      "resourceName"   : "eligibility_requirements"
+    },
+
+    {
+      "onboardingType" : "consent",
+      "resourceName"   : "consent"
+    },
+
+    {
+      "onboardingType"  : "registration",
+      "steps"           : [
+        {
+          "identifier"    : "registration",
+          "type"          : "registration",
+          "text"          : "Please provide a unique email address and password to create a secure account.",
+          "footnote"      : "Sage Bionetworks, a non-profit biomedical research institute, is helping to collect data for this study and distribute it to the study investigators and other researchers.",
+          "items"         : ["name", "email", "password"]
+        }
+      ]
+    },
+
+    {
+      "onboardingType" : "passcode",
+      "steps" : [
+        {
+          "identifier"   : "passcode",
+          "type"         : "passcodeType6Digit",
+          "title"        : "Identification",
+          "text"         : "Select a 4-digit passcode. Setting up a passcode will help provide quick and secure access to this application."
+        }
+      ]
+    },
+
+    {
+      "onboardingType" : "emailVerification",
+      "steps" : [
+        {
+          "identifier"   : "emailVerification",
+          "type"         : "emailVerification"
+        }
+      ]
+    },
+
+    {
+      "onboardingType" : "permissions",
+      "steps" : [
+        {
+          "identifier"   : "permissions",
+          "type"         : "permissions"
+        }
+      ]
+    },
+    {
+      "onboardingType": "completion",
+      "steps": [
+        {
+          "identifier": "onboardingCompletion",
+          "type": "onboardingCompletion",
+          "title": "Thank You!",
+          "text": "You are all set."
+        }
+      ]
+    }
+  ]
+}

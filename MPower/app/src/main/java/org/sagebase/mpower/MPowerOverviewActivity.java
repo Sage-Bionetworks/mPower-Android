@@ -10,16 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.researchstack.backbone.utils.ResUtils;
-import org.researchstack.skin.ResourceManager;
+import org.researchstack.backbone.ResourceManager;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.model.StudyOverviewModel;
+import org.researchstack.skin.ui.OverviewActivity;
 import org.researchstack.skin.ui.adapter.OnboardingPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class OnboardingActivity extends org.researchstack.skin.ui.OnboardingActivity {
+public class MPowerOverviewActivity extends OverviewActivity {
 
     private View pagerFrame;
     private View pagerContainer;
@@ -106,45 +107,45 @@ public class OnboardingActivity extends org.researchstack.skin.ui.OnboardingActi
                         imgv.setImageDrawable(bullet);
                     }
                 }
+          }
 
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
+          @Override
+          public void onPageScrollStateChanged(int state) {
+          }
         });
 
-        showPager(0);
-    }
+    showPager(0);
+  }
 
-    private StudyOverviewModel parseStudyOverviewModel() {
-        return ResourceManager.getInstance().getStudyOverview().create(this);
-    }
+  private StudyOverviewModel parseStudyOverviewModel()
+  {
+    return ResourceManager.getInstance().getStudyOverview().create(this);
+  }
 
-    private void showPager(int index) {
-        pagerFrame.animate().alpha(1)
-                .setDuration(150)
-                .withStartAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        pagerFrame.setVisibility(View.VISIBLE);
-                    }
-                })
-                .withEndAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        pagerContainer.animate()
-                                .translationY(0)
-                                .setDuration(100)
-                                .alpha(1)
-                                .scaleX(1)
-                                .scaleY(1);
-                    }
-                });
+  private void showPager(int index)
+  {
+    pagerFrame.animate().alpha(1)
+            .setDuration(150)
+            .withStartAction(new Runnable() {
+              @Override
+              public void run() {
+                pagerFrame.setVisibility(View.VISIBLE);
+              }
+            })
+             .withEndAction(new Runnable() {
+              @Override
+              public void run() {
+                pagerContainer.animate()
+                        .translationY(0)
+                        .setDuration(100)
+                        .alpha(1)
+                        .scaleX(1)
+                        .scaleY(1);
+              }
+            });
 
-        skip.setActivated(true);
-        signUp.setActivated(true);
+    skip.setActivated(true);
+    signUp.setActivated(true);
 
-    }
-
+  }
 }

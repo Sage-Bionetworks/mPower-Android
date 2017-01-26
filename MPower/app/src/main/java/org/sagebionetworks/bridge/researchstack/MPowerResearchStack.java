@@ -13,14 +13,15 @@ import org.researchstack.backbone.storage.file.PinCodeConfig;
 import org.researchstack.backbone.storage.file.SimpleFileAccess;
 import org.researchstack.backbone.storage.file.aes.AesProvider;
 import org.researchstack.skin.AppPrefs;
-import org.researchstack.skin.DataProvider;
-import org.researchstack.skin.PermissionRequestManager;
+import org.researchstack.backbone.DataProvider;
+import org.researchstack.backbone.PermissionRequestManager;
 import org.researchstack.skin.ResearchStack;
-import org.researchstack.skin.ResourceManager;
+import org.researchstack.backbone.ResourceManager;
 import org.researchstack.skin.TaskProvider;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.notification.NotificationConfig;
 import org.researchstack.skin.notification.SimpleNotificationConfig;
+import org.researchstack.backbone.onboarding.OnboardingManager;
 
 /**
  * Created by TheMDP on 12/12/16.
@@ -45,6 +46,8 @@ public class MPowerResearchStack extends ResearchStack {
 
     MPowerPermissionRequestManager mPermissionManager;
 
+    MPowerOnboardingManager mOnboardingManager;
+
     public MPowerResearchStack(Context context) {
 
         mFileAccess = new SimpleFileAccess();
@@ -52,8 +55,6 @@ public class MPowerResearchStack extends ResearchStack {
         mEncryptionProvider = new AesProvider();
 
         mResourceManager = new MPowerResourceManager();
-
-        mDataProvider = new MPowerDataProvider(context);
 
         mNotificationConfig = new SimpleNotificationConfig();
 
@@ -107,6 +108,9 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected DataProvider createDataProviderImplementation(Context context) {
+        if (mDataProvider == null) {
+            mDataProvider = new MPowerDataProvider(context);
+        }
         return mDataProvider;
     }
 
@@ -126,5 +130,15 @@ public class MPowerResearchStack extends ResearchStack {
     @Override
     protected PermissionRequestManager createPermissionRequestManagerImplementation(Context context) {
         return mPermissionManager;
+    }
+
+    @Override
+    public OnboardingManager getOnboardingManager() {
+        return mOnboardingManager;
+    }
+
+    @Override
+    public void createOnboardingManager(Context context) {
+        mOnboardingManager = new MPowerOnboardingManager(context);
     }
 }

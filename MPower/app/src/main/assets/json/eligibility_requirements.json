@@ -2,25 +2,25 @@
   "steps": [
     {
       "identifier": "inclusionCriteria",
-      "type": "compound",
+      "type": "toggle",
       "skipIdentifier": "eligibleInstruction",
       "skipIfPassed": true,
       "items": [
         {
           "identifier": "age",
-          "text": "Are you 18 or older?",
+          "title": "Are you 18 or older?",
           "type": "boolean",
           "expectedAnswer": true
         },
         {
           "identifier": "residence",
-          "text": "Do you live in the United States of America?",
+          "title": "Do you live in the United States of America?",
           "type": "boolean",
           "expectedAnswer": true
         },
         {
           "identifier": "englishReader",
-          "text": "Are you comfortable reading and writing on your iPhone in English?",
+          "title": "Are you comfortable reading and writing on your iPhone in English?",
           "type": "boolean",
           "expectedAnswer": true
         }
@@ -31,11 +31,7 @@
       "text": "Unfortunately, you are ineligible to join this study.",
       "detailText": "However, you can help spread the word and share the app with others.",
       "image": "logo_disease",
-      "type": "instruction"
-    },
-    {
-      "identifier": "ShareApp",
-      "type": "share",
+      "type": "instruction",
       "nextIdentifier": "exit"
     },
     {
