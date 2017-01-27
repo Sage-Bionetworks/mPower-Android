@@ -115,18 +115,8 @@
             android:layout_height="match_parent" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/intro_skip"
-            style="@style/Button.Skin.Onboarding"
-            android:onClick="onSkipClicked"
-            android:text="@string/rss_skip_signup"
-            android:visibility="gone"
-            app:backgroundTint="@color/rsb_submit_bar_negative"
-            tools:visibility="visible" />
-
-        <android.support.v7.widget.AppCompatButton
             android:id="@+id/intro_sign_up"
             style="@style/Widget.MPower.Onboarding.Button"
-            android:onClick="onSignUpClicked"
             android:text="@string/join_study"
             android:textAllCaps="false" />
 
@@ -142,7 +132,6 @@
         android:layout_centerHorizontal="true"
         android:clickable="true"
         android:gravity="center_vertical"
-        android:onClick="onSignInClicked"
         android:text="@string/onboarding_sign_in"
         android:textAllCaps="false" />
 </RelativeLayout>
