@@ -84,8 +84,7 @@
       "title": "Great Job!",
       "text": "You answered all of the questions correctly.",
       "detailText": "Tap Next to continue.",
-      "image": "Completion-Check",
-      "type": "instruction"
+      "type": "completion"
     },
     {
       "identifier": "consentSharingOptions",

@@ -70,7 +70,7 @@
 
         <activity
             android:name="org.researchstack.skin.ui.ShareActivity"
-            android:label="@string/rss_share" />
+            android:label="@string/rsb_share" />
 
         <!--<activity-->
         <!--android:name="org.researchstack.sampleapp.NotificationPermissionActivity"-->

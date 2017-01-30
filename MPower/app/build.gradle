@@ -33,9 +33,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-    testCompile 'junit:junit:4.12'
+
+    // These are all support libraries that should be updated when Google releases new ones
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
 
     // compile in the skin project from ResearchStack source
     compile project(':skin'), { exclude group: 'joda-time', module: 'joda-time' }
@@ -43,6 +44,8 @@ dependencies {
         // exclude the skin project since we are compiling from source
         exclude group: 'org.researchstack:skin', module: 'org.researchstack:skin'
     }
+
+    testCompile 'junit:junit:4.12'
 
     compile project(':android-sdk')
 }

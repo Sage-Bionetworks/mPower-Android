@@ -7,5 +7,9 @@
     <string name="onboarding_sign_in">Sign In</string>
     <string name="join_study">Join Study</string>
 
-    <string name="rss_share_message_format">Please take a look at Parkinson mPower, a research study app about Parkinson Disease.  Download it for Android at <a>TBD</a></string>
+    <string name="rsb_share_the_app_message">
+        Please take a look at Parkinson mPower, a research study app about Parkinson Disease.
+        Download it for Android at https://play.google.com/store/apps/details?id=org.sagebase.mpower</string>
+    <string name="rsb_share_app_url">https://play.google.com/store/apps/details?id=org.sagebase.mpower</string>
+
 </resources>

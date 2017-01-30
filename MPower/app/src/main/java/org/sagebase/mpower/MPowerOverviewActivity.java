@@ -24,7 +24,6 @@ public class MPowerOverviewActivity extends OverviewActivity {
 
     private View pagerFrame;
     private View pagerContainer;
-    private Button skip;
     private Button signUp;
     private TextView signIn;
     private List<ImageView> mBullets;
@@ -67,10 +66,20 @@ public class MPowerOverviewActivity extends OverviewActivity {
         }
 
         signUp = (Button) findViewById(org.researchstack.skin.R.id.intro_sign_up);
-        signIn = (TextView) findViewById(org.researchstack.skin.R.id.intro_sign_in);
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSignUpClicked(view);
+            }
+        });
 
-        skip = (Button) findViewById(org.researchstack.skin.R.id.intro_skip);
-        skip.setVisibility(UiManager.getInstance().isConsentSkippable() ? View.VISIBLE : View.GONE);
+        signIn = (TextView) findViewById(org.researchstack.skin.R.id.intro_sign_in);
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSignInClicked(view);
+            }
+        });
 
         int resId = ResUtils.getDrawableResourceId(this, model.getLogoName());
         logoView.setImageResource(resId);
@@ -144,8 +153,6 @@ public class MPowerOverviewActivity extends OverviewActivity {
               }
             });
 
-    skip.setActivated(true);
     signUp.setActivated(true);
-
   }
 }
