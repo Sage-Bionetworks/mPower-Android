@@ -3,6 +3,7 @@ package org.sagebionetworks.bridge.researchstack;
 import android.content.Context;
 
 import org.researchstack.backbone.result.TaskResult;
+import org.sagebionetworks.bridge.android.manager.BridgeManagerProvider;
 
 import static org.sagebase.mpower.BuildConfig.BRIDGE_URL;
 import static org.sagebase.mpower.BuildConfig.CERTIFICATE_NAME;
@@ -18,8 +19,8 @@ public class MPowerDataProvider extends BridgeDataProvider {
 
     public MPowerDataProvider(Context context) {
         // TODO give path to permission file for uploads
-        super(BRIDGE_URL, STUDY_ID, USER_AGENT,
-                new MPowerResourceManager.PemResource(CERTIFICATE_NAME));
+        super(BridgeManagerProvider.getInstance(context), BRIDGE_URL, STUDY_ID, USER_AGENT,
+              new MPowerResourceManager.PemResource(CERTIFICATE_NAME));
     }
 
     @Override
