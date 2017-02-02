@@ -13,4 +13,5 @@ android:
     - extra-android-m2repository
     - extra-google-m2repository
 script:
+    - pushd MPower
     - ./gradlew clean build
