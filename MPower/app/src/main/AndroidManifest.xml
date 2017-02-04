@@ -61,8 +61,8 @@
 
         <activity
             android:name="org.sagebase.mpower.SettingsActivity"
-            android:label="@string/rss_settings" />
-        <!--android:theme="@style/Theme.Sample.Settings"/-->
+            android:label="@string/rss_settings"
+            android:theme="@style/Theme.MPower.Settings"/>
 
         <activity
             android:name="org.researchstack.skin.ui.LearnActivity"
