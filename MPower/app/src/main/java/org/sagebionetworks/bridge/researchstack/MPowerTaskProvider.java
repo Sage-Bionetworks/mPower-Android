@@ -176,7 +176,7 @@ public class MPowerTaskProvider extends TaskProvider {
 
         InstructionStep thankYouStep = new InstructionStep("thankYou",
                 "Thank You!",
-                "Your participation in this study is helping us to better understand risks of becoming a robot\n\nYour task now is to take robot surveys each month. You don't have to get them all, but the more the better!\n\nHappy robot-ing!");
+                "Your participation in this study is helping us to better understand risks of becoming a robot\n\nYour task now is to take robot surveys each month. You don't have to getConsent them all, but the more the better!\n\nHappy robot-ing!");
         thankYouStep.setStepTitle(org.sagebase.mpower.R.string.task_initial_toolbar_title);
         // Add to Task
         steps.add(thankYouStep);
