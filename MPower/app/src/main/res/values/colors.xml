@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">@color/purple</color>
 
+    <color name="rsb_colorPrimary">@color/colorPrimary</color>
+    <color name="rsb_colorPrimaryDark">@color/colorPrimaryDark</color>
+    <color name="rsb_colorAccent">@color/purple</color>
+
     <color name="white">#FFFFFF</color>
     <color name="gray">#AAAAAA</color>
     <color name="purple">#5B3EAD</color>
@@ -12,7 +16,6 @@
     <color name="blue">#0000FF</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
-
 
     <color name="text_color_settings_title">@color/dark_gray</color>
     <color name="text_color_settings_summary">@color/dark_gray</color>
