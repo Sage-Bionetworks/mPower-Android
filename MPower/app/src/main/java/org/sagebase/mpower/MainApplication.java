@@ -15,6 +15,7 @@ public class MainApplication extends BridgeApplication {
 
     MPowerResearchStack mPowerResearchStack;
 
+    @Override
     public void onCreate() {
         super.onCreate();
 
