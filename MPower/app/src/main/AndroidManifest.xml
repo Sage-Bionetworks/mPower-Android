@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sagebase.mpower">
 
+    <!-- ActiveSteps may vibrate the phone on start and on finish -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -44,6 +46,12 @@
 
         <activity
             android:name="org.researchstack.backbone.ui.ViewTaskActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MPower.Survey"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="org.researchstack.backbone.ui.ActiveTaskActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MPower.Survey"
             android:windowSoftInputMode="adjustResize" />

@@ -1,5 +1,5 @@
 <resources>
-    <string name="osb_study_id">parkinsons-android</string>
+    <string name="osb_study_id">parkinson-android</string>
     <string name="osb_study_name">mPower</string>
 
     <string name="app_name">MPower</string>

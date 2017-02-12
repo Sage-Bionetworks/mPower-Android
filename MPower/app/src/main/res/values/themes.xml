@@ -31,7 +31,7 @@
     </style>
 
     <style name="Theme.MPower.Survey">
-        <item name="toolbarTheme">@style/Theme.MPower.Toolbar.Transparent</item>
+        <item name="toolbarTheme">@style/Theme.MPower.Toolbar.Main</item>
         <item name="colorPrimaryDark">@color/dark_gray</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
