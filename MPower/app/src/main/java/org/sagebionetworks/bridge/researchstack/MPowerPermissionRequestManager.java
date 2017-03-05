@@ -24,14 +24,29 @@ public class MPowerPermissionRequestManager extends PermissionRequestManager {
     public MPowerPermissionRequestManager() {
         // If Build is M or >, add needed permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            PermissionRequestManager.PermissionRequest location = new PermissionRequestManager.PermissionRequest(Manifest.permission.ACCESS_FINE_LOCATION,
-                    R.drawable.rsb_ic_location_24dp,
-                    R.string.rsb_permission_location_title,
-                    R.string.rsb_permission_location_desc);
-            location.setIsBlockingPermission(true);
-            location.setIsSystemPermission(true);
+            {
+                PermissionRequestManager.PermissionRequest permission = new PermissionRequestManager.PermissionRequest(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        R.drawable.rsb_ic_location_24dp,
+                        R.string.rsb_permission_location_title,
+                        R.string.rsb_permission_location_desc);
+                permission.setIsBlockingPermission(true);
+                permission.setIsSystemPermission(true);
 
-            addPermission(location);
+                addPermission(permission);
+            }
+
+            {
+                PermissionRequestManager.PermissionRequest permission = new PermissionRequestManager.PermissionRequest(
+                        Manifest.permission.RECORD_AUDIO,
+                        R.drawable.rsb_ic_microphone_24dp,
+                        R.string.rsb_permission_microphone_title,
+                        R.string.rsb_permission_microphone_desc);
+                permission.setIsBlockingPermission(true);
+                permission.setIsSystemPermission(true);
+
+                addPermission(permission);
+            }
         }
 
         // We have some unique permissions that tie into Settings. You will need
