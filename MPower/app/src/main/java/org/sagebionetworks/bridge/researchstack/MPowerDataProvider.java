@@ -15,8 +15,7 @@ public class MPowerDataProvider extends BridgeDataProvider {
 
     public MPowerDataProvider(Context context) {
         // TODO give path to permission file for uploads
-        super(BridgeManagerProvider.getInstance(),
-                new MPowerResourceManager.PemResource(CERTIFICATE_NAME));
+        super(BridgeManagerProvider.getInstance());
     }
 
     @Override
