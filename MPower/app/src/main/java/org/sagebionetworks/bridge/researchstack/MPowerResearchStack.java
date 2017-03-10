@@ -109,7 +109,7 @@ public class MPowerResearchStack extends ResearchStack {
     @Override
     protected DataProvider createDataProviderImplementation(Context context) {
         if (mDataProvider == null) {
-            mDataProvider = new MPowerDataProvider(context);
+            mDataProvider = new MPowerDataProvider();
         }
         return mDataProvider;
     }

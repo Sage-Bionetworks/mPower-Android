@@ -13,10 +13,9 @@ import static org.sagebase.mpower.BuildConfig.CERTIFICATE_NAME;
 
 public class MPowerDataProvider extends BridgeDataProvider {
 
-    public MPowerDataProvider(Context context) {
+    public MPowerDataProvider() {
         // TODO give path to permission file for uploads
-        super(BridgeManagerProvider.getInstance(),
-                new MPowerResourceManager.PemResource(CERTIFICATE_NAME));
+        super(BridgeManagerProvider.getInstance());
     }
 
     @Override
