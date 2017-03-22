@@ -29,7 +29,7 @@ import org.researchstack.backbone.onboarding.OnboardingManager;
 
 public class MPowerResearchStack extends ResearchStack {
 
-    BridgeEncryptedDatabase mEncryptedDb;
+    MPowerEmptyAppDatabase mEmptyDb;
     AesProvider mEncryptionProvider;
 
     MPowerResourceManager mResourceManager;
@@ -63,15 +63,10 @@ public class MPowerResearchStack extends ResearchStack {
 
     @Override
     protected AppDatabase createAppDatabaseImplementation(Context context) {
-        if (mEncryptedDb == null) {
-            SQLiteDatabase.loadLibs(context);
-            mEncryptedDb = new BridgeEncryptedDatabase(context,
-                    SqlCipherDatabaseHelper.DEFAULT_NAME,
-                    null,
-                    SqlCipherDatabaseHelper.DEFAULT_VERSION,
-                    new UpdatablePassphraseProvider());
+        if (mEmptyDb == null) {
+            mEmptyDb = new MPowerEmptyAppDatabase();
         }
-        return mEncryptedDb;
+        return mEmptyDb;
     }
 
     @Override
