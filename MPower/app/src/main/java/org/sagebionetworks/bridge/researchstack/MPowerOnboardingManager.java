@@ -4,13 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 
-import org.researchstack.backbone.model.survey.CustomSurveyItem;
 import org.researchstack.backbone.model.survey.SurveyItem;
 import org.researchstack.backbone.model.survey.SurveyItemAdapter;
 import org.researchstack.backbone.model.survey.factory.SurveyFactory;
 import org.researchstack.backbone.onboarding.OnboardingManagerTask;
-import org.researchstack.backbone.step.CustomStep;
 import org.researchstack.backbone.step.Step;
 import org.researchstack.backbone.task.NavigableOrderedTask;
 import org.researchstack.backbone.onboarding.OnboardingManager;
@@ -47,9 +46,9 @@ public class MPowerOnboardingManager extends OnboardingManager {
      * @return a CustomStep object, which can be anything we want it to be
      */
     @Override
-    public CustomStep createCustomStep(CustomSurveyItem item, SurveyFactory factory) {
+    public Step createCustomStep(Context context, SurveyItem item, SurveyFactory factory) {
         // Since we dont have any in mPower, just go with default implementation of this instance of SurveyFactory
-        return factory.createCustomStep(item);
+        return factory.createCustomStep(context, item);
     }
 
     @Override
@@ -73,8 +72,8 @@ public class MPowerOnboardingManager extends OnboardingManager {
          * @return type of survey item to create from the custom class
          */
         @Override
-        public Class<? extends CustomSurveyItem> getCustomClass(String customType) {
-            return super.getCustomClass(customType);
+        public Class<? extends SurveyItem> getCustomClass(String customType, JsonElement json) {
+            return super.getCustomClass(customType, json);
         }
     }
 }
