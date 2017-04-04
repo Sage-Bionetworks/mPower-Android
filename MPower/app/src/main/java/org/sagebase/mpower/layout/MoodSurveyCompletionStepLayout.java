@@ -37,7 +37,6 @@ public class MoodSurveyCompletionStepLayout extends InstructionStepLayout {
     protected void onComplete() {
         // increment the counter
         int counter = MPowerPrefs.getInstance().getCustomSurveyCounter() + 1;
-        Log.d(LOG_TAG, "onComplete(): " + counter);
         MPowerPrefs.getInstance().setCustomSurveyCounter(counter);
         super.onComplete();
     }

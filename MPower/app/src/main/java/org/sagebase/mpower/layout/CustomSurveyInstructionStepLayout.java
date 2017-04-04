@@ -55,7 +55,7 @@ public class CustomSurveyInstructionStepLayout extends InstructionStepLayout {
                 .setCancelable(false)
                 .setPositiveButton(getContext().getString(R.string.custom_mood_survey_dialog_confirm), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //do things
+                        // nothing to do
                     }
                 });
         AlertDialog alert = builder.create();

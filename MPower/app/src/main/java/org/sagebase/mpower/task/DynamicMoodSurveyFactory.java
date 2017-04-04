@@ -49,7 +49,6 @@ public class DynamicMoodSurveyFactory extends MoodSurveyFactory {
 
         int counter = MPowerPrefs.getInstance().getCustomSurveyCounter();
         String customQuestionText = MPowerPrefs.getInstance().getCustomSurveyQuestion();
-        Log.d(LOG_TAG, "Custom counter: " + counter + ", question: " + customQuestionText);
 
         // Intro
         {
