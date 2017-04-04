@@ -29,7 +29,6 @@ Some examples may include:
 - My work day today was...
 
 We will track your question in the dashboard (shown as "Custom Question") over time. Remember that you can always go to your profile and change this question.</string>
-    <string name="custom_mood_survey_dialog_confirm">OK</string>
 
     <string name="custom_mood_survey_completion_title">Thank You</string>
     <string name="custom_mood_survey_completion_text">Your results will be displayed on the dashboard when ready.</string>

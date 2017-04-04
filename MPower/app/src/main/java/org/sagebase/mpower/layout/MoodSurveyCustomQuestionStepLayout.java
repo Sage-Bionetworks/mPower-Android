@@ -11,16 +11,16 @@ import org.sagebionetworks.bridge.researchstack.MPowerPrefs;
  * Created by rianhouston on 4/2/17.
  */
 
-public class CustomSurveyQuestionStepLayout extends SurveyStepLayout {
-    public CustomSurveyQuestionStepLayout(Context context) {
+public class MoodSurveyCustomQuestionStepLayout extends SurveyStepLayout {
+    public MoodSurveyCustomQuestionStepLayout(Context context) {
         super(context);
     }
 
-    public CustomSurveyQuestionStepLayout(Context context, AttributeSet attrs) {
+    public MoodSurveyCustomQuestionStepLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CustomSurveyQuestionStepLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MoodSurveyCustomQuestionStepLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

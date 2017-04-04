@@ -1,26 +1,26 @@
 package org.sagebase.mpower.step;
 
 import org.researchstack.backbone.step.InstructionStep;
-import org.sagebase.mpower.layout.CustomSurveyInstructionStepLayout;
+import org.sagebase.mpower.layout.MoodSurveyCustomInstructionStepLayout;
 
 /**
  * Created by rianhouston on 4/1/17.
  */
 
-public class CustomSurveyInstructionStep extends InstructionStep {
+public class MoodSurveyCustomInstructionStep extends InstructionStep {
 
     /* Default constructor needed for serilization/deserialization of object */
-    CustomSurveyInstructionStep() {
+    MoodSurveyCustomInstructionStep() {
         super();
     }
 
-    public CustomSurveyInstructionStep(String identifier, String title, String detailText)
+    public MoodSurveyCustomInstructionStep(String identifier, String title, String detailText)
     {
         super(identifier, title, detailText);
         setOptional(false);
     }
 
     public Class getStepLayoutClass() {
-        return CustomSurveyInstructionStepLayout.class;
+        return MoodSurveyCustomInstructionStepLayout.class;
     }
 }

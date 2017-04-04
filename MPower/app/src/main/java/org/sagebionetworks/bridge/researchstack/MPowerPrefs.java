@@ -56,4 +56,8 @@ public class MPowerPrefs {
         prefs.edit().putInt(KEY_CUSTOM_SURVEY_COUNTER, counter).apply();
     }
 
+    public void clear() {
+        prefs.edit().clear().commit();
+    }
+
 }

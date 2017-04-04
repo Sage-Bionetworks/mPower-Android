@@ -1,7 +1,6 @@
 package org.sagebase.mpower.task;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.researchstack.backbone.answerformat.TextAnswerFormat;
 import org.researchstack.backbone.step.InstructionStep;
@@ -10,8 +9,8 @@ import org.researchstack.backbone.step.Step;
 import org.researchstack.backbone.task.OrderedTask;
 import org.researchstack.backbone.task.factory.MoodSurveyFactory;
 import org.researchstack.backbone.task.factory.MoodSurveyFrequency;
-import org.sagebase.mpower.step.CustomSurveyInstructionStep;
-import org.sagebase.mpower.step.CustomSurveyQuestionStep;
+import org.sagebase.mpower.step.MoodSurveyCustomInstructionStep;
+import org.sagebase.mpower.step.MoodSurveyCustomQuestionStep;
 import org.sagebase.mpower.step.MoodSurveyCompletionStep;
 import org.sagebase.mpower.R;
 import org.sagebionetworks.bridge.researchstack.MPowerPrefs;
@@ -28,7 +27,7 @@ import static org.researchstack.backbone.task.factory.TaskFactory.Constants.Conc
 public class DynamicMoodSurveyFactory extends MoodSurveyFactory {
     private static final String LOG_TAG = DynamicMoodSurveyFactory.class.getCanonicalName();
 
-    private static final String CustomSurveyInstrcutionIdentifier = "customer.survey.instruction";
+    private static final String CustomSurveyInstrcutionIdentifier = "custom.survey.instruction";
     private static final String CustomSurveyQuestionIdentifier = "custom.survey.question";
 
     private static final int TEXT_ANSWER_FORMAT_MAX_LENGTH = 90;
@@ -62,7 +61,7 @@ public class DynamicMoodSurveyFactory extends MoodSurveyFactory {
             {
                 String title = context.getString(R.string.custom_mood_survey_title);
                 String text = context.getString(R.string.custom_mood_survey_text);
-                InstructionStep step = new CustomSurveyInstructionStep(CustomSurveyInstrcutionIdentifier, title, text);
+                InstructionStep step = new MoodSurveyCustomInstructionStep(CustomSurveyInstrcutionIdentifier, title, text);
                 step.setMoreDetailText(context.getString(R.string.custom_mood_survey_dialog_label));
                 stepList.add(step);
             }
@@ -72,7 +71,7 @@ public class DynamicMoodSurveyFactory extends MoodSurveyFactory {
                 TextAnswerFormat answer = new TextAnswerFormat(TEXT_ANSWER_FORMAT_MAX_LENGTH);
                 answer.setIsMultipleLines(true);
                 answer.setMinumumLength(1);
-                QuestionStep step = new CustomSurveyQuestionStep(CustomSurveyQuestionIdentifier,
+                QuestionStep step = new MoodSurveyCustomQuestionStep(CustomSurveyQuestionIdentifier,
                         context.getString(R.string.custom_mood_survey_question_text), answer);
                 step.setPlaceholder(context.getString(R.string.custom_mood_survey_placeholder_text));
 
