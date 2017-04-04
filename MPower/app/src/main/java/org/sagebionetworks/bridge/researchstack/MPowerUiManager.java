@@ -7,7 +7,7 @@ import org.researchstack.backbone.step.Step;
 import org.researchstack.skin.ActionItem;
 import org.researchstack.skin.UiManager;
 import org.researchstack.skin.ui.LearnActivity;
-import org.researchstack.skin.ui.fragment.ActivitiesFragment;
+import org.sagebase.mpower.ActivitiesFragment;
 import org.sagebase.mpower.DashboardFragment;
 import org.sagebase.mpower.R;
 import org.sagebase.mpower.SettingsActivity;

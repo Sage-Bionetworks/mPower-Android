@@ -50,6 +50,8 @@ public class MPowerResearchStack extends ResearchStack {
 
     public MPowerResearchStack(Context context) {
 
+        MPowerPrefs.init(context);
+
         mFileAccess = new SimpleFileAccess();
 
         mEncryptionProvider = new AesProvider();
