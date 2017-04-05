@@ -27,6 +27,14 @@ public class MPowerResourceManager extends ResourceManager {
     private static final String BASE_PATH_PDF           = "pdf";
     private static final String BASE_PATH_VIDEO         = "mp4";
 
+    public MPowerResourceManager() {
+        super();
+
+        // Add all custom resources that we will need access to
+        addResource("consent", new Resource(Resource.TYPE_JSON, "json", "consent"));
+        addResource("eligibility_requirements", new Resource(Resource.TYPE_JSON, "json", "eligibility_requirements"));
+    }
+
     @Override
     public Resource getStudyOverview() {
         return new Resource(Resource.TYPE_JSON,
