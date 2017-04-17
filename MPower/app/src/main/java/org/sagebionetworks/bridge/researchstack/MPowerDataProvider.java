@@ -7,6 +7,7 @@ import org.researchstack.backbone.result.TaskResult;
 import org.sagebionetworks.bridge.android.manager.BridgeManagerProvider;
 
 import rx.Observable;
+import rx.functions.Action0;
 
 import static org.sagebase.mpower.BuildConfig.CERTIFICATE_NAME;
 
@@ -27,7 +28,13 @@ public class MPowerDataProvider extends BridgeDataProvider {
     }
 
     public Observable<DataResponse> signOut(Context context) {
-        MPowerPrefs.getInstance().clear();
-        return super.signOut(context);
+        return super.signOut(context)
+                .doOnCompleted(new Action0() {
+                    @Override
+                    public void call() {
+                        MPowerPrefs.getInstance().clear();
+                    }
+                });
+
     }
 }

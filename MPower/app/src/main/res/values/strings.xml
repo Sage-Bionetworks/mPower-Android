@@ -33,4 +33,8 @@ We will track your question in the dashboard (shown as "Custom Question") over t
     <string name="custom_mood_survey_completion_title">Thank You</string>
     <string name="custom_mood_survey_completion_text">Your results will be displayed on the dashboard when ready.</string>
 
+    <string name="settings_custom_question_title">Daily Scale</string>
+    <string name="settings_custom_question_hint">Enter a question.</string>
+    <string name="settings_custom_question_summary">Enter a custom question that you would like to track.</string>
+
 </resources>
