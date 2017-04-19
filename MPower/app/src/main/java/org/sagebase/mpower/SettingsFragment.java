@@ -29,8 +29,7 @@ public class SettingsFragment extends org.researchstack.skin.ui.fragment.Setting
         PreferenceCategory category = (PreferenceCategory) screen.findPreference(KEY_PROFILE);
 
         // TODO:  not sure where this should go so adding to profile for now
-        //        also, should this only show after they have entered a question from the daily task?
-        if (category != null) {
+        if (category != null && MPowerPrefs.getInstance().getCustomSurveyQuestion() != null) {
             Preference editTextPref = new Preference(screen.getContext());
             editTextPref.setKey(KEY_CUSTOM_QUESTION);
             editTextPref.setTitle(getString(R.string.settings_custom_question_title));
