@@ -1,0 +1,57 @@
+language: android
+jdk: oraclejdk8
+sudo: true
+env:
+  matrix:
+  - ANDROID_TARGET=android-21 ANDROID_ABI=armeabi-v7a
+  global:
+  - ADB_INSTALL_TIMEOUT=10
+before_cache:
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches"
+  - "$HOME/.android/build-cache"
+  - "$HOME/.gradle/wrapper"
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
+  - build-tools-25.0.2
+  - android-25
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-android-21
+  licenses:
+  - android-sdk-preview-license-52d11cd2
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+branches:
+  only:
+  - mPower-Android
+  - "/^mPower-Android-.*$/"
+before_install:
+- echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
+- git config --global user.name "Travis CI"
+- git config --global user.email "tcisagebio@sagebase.org"
+- sudo update-java-alternatives -s java-8-oracle
+install:
+- rvm install 2.3.4
+- gem install bundler
+- bundle install
+before_script:
+- echo no | android create avd --force --name test --target $ANDROID_TARGET --abi
+  $ANDROID_ABI
+- emulator -avd test -no-skin -no-audio -no-window &
+- mkdir "$ANDROID_HOME/licenses" || true
+- echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+- echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+script:
+- android-wait-for-emulator
+- adb devices
+- adb shell input keyevent 82 &
+- export PATH=$PATH:$ANDROID_HOME/build-tools/25.0.2
+- travis/build.sh
