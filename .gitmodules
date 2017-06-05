@@ -1,3 +1,3 @@
-[submodule "MPower/BridgeAndroidSdk"]
-	path = MPower/BridgeAndroidSdk
+[submodule "BridgeAndroidSdk"]
+	path = BridgeAndroidSdk
 	url = https://github.com/Sage-Bionetworks/BridgeAndroidSDK.git
