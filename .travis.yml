@@ -43,8 +43,8 @@ install:
 - gem install bundler
 - bundle install
 before_script:
-- echo no | android create avd --force --name test --target $ANDROID_TARGET --abi
-  $ANDROID_ABI
+- android list targets
+- echo no | android create avd --force --name test --target $ANDROID_TARGET --abi $ANDROID_ABI
 - emulator -avd test -no-skin -no-audio -no-window &
 - mkdir "$ANDROID_HOME/licenses" || true
 - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
