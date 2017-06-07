@@ -31,8 +31,8 @@ android:
   - google-gdk-license-.+
 branches:
   only:
-  - mPower-Android
-  - "/^mPower-Android-.*$/"
+  - master
+  - "/^stable-.*$/"
 before_install:
 - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
 - git config --global user.name "Travis CI"
