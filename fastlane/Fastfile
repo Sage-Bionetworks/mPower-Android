@@ -23,7 +23,8 @@ platform :android do
   desc "Runs all the tests"
   lane :test do
     gradle(task: "test")
-    gradle(task: "connectedCheck")
+# Disable test due to issue MA-172
+#    gradle(task: "connectedCheck")
     gradle(task: "deviceCheck")
   end
 
@@ -56,7 +57,6 @@ platform :android do
       keypass: options[:keypass]
     )
     zipalign(apk_path: "#{lane_context[SharedValues::SIGNED_APK_PATH]}")
-    gradle(task: "connectedCheck")
     supply(
       track: "alpha",
       apk: "#{lane_context[SharedValues::SIGNED_APK_PATH]}",
