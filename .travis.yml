@@ -1,5 +1,6 @@
 language: android
 jdk: oraclejdk8
+dist: trusty
 sudo: true
 env:
   matrix:
@@ -24,6 +25,7 @@ android:
   - extra-google-google_play_services
   - extra-google-m2repository
   - extra-android-m2repository
+  - android-21
   - sys-img-armeabi-v7a-android-21
   licenses:
   - android-sdk-preview-license-52d11cd2
