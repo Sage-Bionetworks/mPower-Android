@@ -40,17 +40,6 @@ public class MPowerOnboardingManager extends OnboardingManager {
         builder.registerTypeAdapter(SurveyItem.class, new CustomSurveyItemAdapter());
     }
 
-    /**
-     * @param item CustomSurveyItem, which will be the type returns from our CustomSurveyItemAdapter
-     * @param factory either a SurveyFactory, or ConsentDocumentFactory subclass
-     * @return a CustomStep object, which can be anything we want it to be
-     */
-    @Override
-    public Step createCustomStep(Context context, SurveyItem item, SurveyFactory factory) {
-        // Since we dont have any in mPower, just go with default implementation of this instance of SurveyFactory
-        return factory.createCustomStep(context, item);
-    }
-
     @Override
     public OnboardingManagerTask createOnboardingTask(String identifier, List<Step> stepList) {
         // here we can implement our own Task, but it needs to be a NavigableOrderedTask
