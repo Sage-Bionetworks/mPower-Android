@@ -37,7 +37,11 @@ dependencies {
 
     // These are all support libraries that should be updated when Google releases new ones
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:preference-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:support-annotations:26.1.0'
+
 
     // implementation in the skin project from ResearchStack source
     implementation project(':skin'), { exclude group: 'joda-time', module: 'joda-time' }
