@@ -1,5 +1,8 @@
 package org.sagebase.mpower;
 
+import android.widget.Toast;
+
+import org.researchstack.backbone.model.SchedulesAndTasksModel;
 import org.researchstack.backbone.task.Task;
 import org.researchstack.backbone.task.factory.MoodSurveyFactory;
 import org.researchstack.backbone.ui.ViewTaskActivity;
@@ -13,7 +16,14 @@ public class ActivitiesFragment extends org.researchstack.skin.ui.fragment.Activ
     private static final String LOG_TAG = ActivitiesFragment.class.getCanonicalName();
 
     @Override
-    protected void startCustomMoodSurveyTask() {
+    protected void startCustomTask(SchedulesAndTasksModel.TaskScheduleModel task) {
+        Toast.makeText(getActivity(),
+                org.researchstack.skin.R.string.rss_local_error_load_task,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void startCustomMoodSurveyTask() {
 
         Task task = DynamicMoodSurveyFactory.moodSurvey(getContext(), MoodSurveyFactory.MoodSurveyIdentifier);
         startActivity(ViewTaskActivity.newIntent(getContext(), task));
