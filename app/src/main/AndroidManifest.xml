@@ -27,7 +27,7 @@
         </activity>
 
         <activity
-            android:name="org.researchstack.skin.ui.MainActivity"
+            android:name="org.researchstack.backbone.ui.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -70,15 +70,15 @@
 
         <activity
             android:name="org.sagebase.mpower.SettingsActivity"
-            android:label="@string/rss_settings"
+            android:label="@string/rsb_settings"
             android:theme="@style/Theme.MPower.Settings"/>
 
         <activity
-            android:name="org.researchstack.skin.ui.LearnActivity"
-            android:label="@string/rss_learn" />
+            android:name="org.researchstack.backbone.ui.LearnActivity"
+            android:label="@string/rsb_learn" />
 
         <activity
-            android:name="org.researchstack.skin.ui.ShareActivity"
+            android:name="org.researchstack.backbone.ui.ShareActivity"
             android:label="@string/rsb_share" />
 
         <!--<activity-->
@@ -86,12 +86,12 @@
         <!--android:label="@string/sample_notification_example"/>-->
 
         <receiver
-            android:name="org.researchstack.skin.notification.TaskNotificationReceiver"
+            android:name="org.researchstack.backbone.notification.TaskNotificationReceiver"
             android:enabled="true"
             android:exported="false" />
 
         <receiver
-            android:name="org.researchstack.skin.notification.DeviceBootReceiver"
+            android:name="org.researchstack.backbone.notification.DeviceBootReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -100,14 +100,14 @@
         </receiver>
 
         <receiver
-            android:name="org.researchstack.skin.notification.TaskAlertReceiver"
+            android:name="org.researchstack.backbone.notification.TaskAlertReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.researchstack.skin.notification.ALERT_CREATE" />
-                <action android:name="org.researchstack.skin.notification.ALERT_CREATE_ALL" />
-                <action android:name="org.researchstack.skin.notification.ALERT_DELETE" />
-                <action android:name="org.researchstack.skin.notification.ALERT_DELETE_ALL" />
+                <action android:name="org.researchstack.backbone.notification.ALERT_CREATE" />
+                <action android:name="org.researchstack.backbone.notification.ALERT_CREATE_ALL" />
+                <action android:name="org.researchstack.backbone.notification.ALERT_DELETE" />
+                <action android:name="org.researchstack.backbone.notification.ALERT_DELETE_ALL" />
             </intent-filter>
         </receiver>
 

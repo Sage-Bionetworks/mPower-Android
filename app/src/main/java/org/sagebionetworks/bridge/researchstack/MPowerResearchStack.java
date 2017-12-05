@@ -2,25 +2,21 @@ package org.sagebionetworks.bridge.researchstack;
 
 import android.content.Context;
 
-import net.sqlcipher.database.SQLiteDatabase;
-
 import org.researchstack.backbone.storage.database.AppDatabase;
-import org.researchstack.backbone.storage.database.sqlite.SqlCipherDatabaseHelper;
-import org.researchstack.backbone.storage.database.sqlite.UpdatablePassphraseProvider;
 import org.researchstack.backbone.storage.file.EncryptionProvider;
 import org.researchstack.backbone.storage.file.FileAccess;
 import org.researchstack.backbone.storage.file.PinCodeConfig;
 import org.researchstack.backbone.storage.file.SimpleFileAccess;
 import org.researchstack.backbone.storage.file.aes.AesProvider;
-import org.researchstack.skin.AppPrefs;
+import org.researchstack.backbone.AppPrefs;
 import org.researchstack.backbone.DataProvider;
 import org.researchstack.backbone.PermissionRequestManager;
-import org.researchstack.skin.ResearchStack;
+import org.researchstack.backbone.ResearchStack;
 import org.researchstack.backbone.ResourceManager;
-import org.researchstack.skin.TaskProvider;
-import org.researchstack.skin.UiManager;
-import org.researchstack.skin.notification.NotificationConfig;
-import org.researchstack.skin.notification.SimpleNotificationConfig;
+import org.researchstack.backbone.TaskProvider;
+import org.researchstack.backbone.UiManager;
+import org.researchstack.backbone.notification.NotificationConfig;
+import org.researchstack.backbone.notification.SimpleNotificationConfig;
 import org.researchstack.backbone.onboarding.OnboardingManager;
 
 /**

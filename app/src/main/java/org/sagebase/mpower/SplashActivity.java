@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import org.researchstack.backbone.utils.LogExt;
-import org.researchstack.skin.ui.MainActivity;
+import org.researchstack.backbone.ui.MainActivity;
 
 /**
  * Created by rianhouston on 12/13/16.
  */
 
-public class SplashActivity extends org.researchstack.skin.ui.SplashActivity {
+public class SplashActivity extends org.researchstack.backbone.ui.SplashActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

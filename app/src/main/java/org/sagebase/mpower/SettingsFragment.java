@@ -16,7 +16,7 @@ import android.widget.EditText;
 import org.researchstack.backbone.utils.LogExt;
 import org.sagebionetworks.bridge.researchstack.MPowerPrefs;
 
-public class SettingsFragment extends org.researchstack.skin.ui.fragment.SettingsFragment {
+public class SettingsFragment extends org.researchstack.backbone.ui.fragment.SettingsFragment {
     public static final String KEY_CUSTOM_QUESTION = "MPOWER_CUSTOM_QUESTION";
 
     @Override
@@ -41,7 +41,7 @@ public class SettingsFragment extends org.researchstack.skin.ui.fragment.Setting
 
     @Override
     public String getVersionString() {
-        return getString(org.researchstack.skin.R.string.rss_settings_version,
+        return getString(org.researchstack.backbone.R.string.rsb_settings_version,
                 BuildConfig.VERSION_NAME,
                 BuildConfig.VERSION_CODE);
     }

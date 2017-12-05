@@ -47,13 +47,7 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:support-annotations:26.1.0'
 
-
-    // implementation in the skin project from ResearchStack source
-    implementation project(':skin'), { exclude group: 'joda-time', module: 'joda-time' }
-    implementation project(':researchstack-sdk'), {
-        // exclude the skin project since we are compiling from source
-        exclude group: 'org.researchstack:skin', module: 'org.researchstack:skin'
-    }
+    implementation project(':researchstack-sdk')
 
     testImplementation 'junit:junit:4.12'
 
