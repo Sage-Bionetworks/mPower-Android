@@ -4,9 +4,9 @@ import android.content.Context;
 
 import org.researchstack.backbone.result.StepResult;
 import org.researchstack.backbone.step.Step;
-import org.researchstack.skin.ActionItem;
-import org.researchstack.skin.UiManager;
-import org.researchstack.skin.ui.LearnActivity;
+import org.researchstack.backbone.ActionItem;
+import org.researchstack.backbone.UiManager;
+import org.researchstack.backbone.ui.LearnActivity;
 import org.sagebase.mpower.ActivitiesFragment;
 import org.sagebase.mpower.DashboardFragment;
 import org.sagebase.mpower.R;
@@ -28,14 +28,14 @@ public class MPowerUiManager extends UiManager {
         List<ActionItem> navItems = new ArrayList<>();
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_activities)
-                .setTitle(R.string.rss_activities)
-                .setIcon(R.drawable.rss_ic_tab_activities)
+                .setTitle(R.string.rsb_activities)
+                .setIcon(R.drawable.rsb_ic_tab_activities)
                 .setClass(ActivitiesFragment.class)
                 .build());
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_dashboard)
-                .setTitle(R.string.rss_dashboard)
-                .setIcon(R.drawable.rss_ic_tab_dashboard)
+                .setTitle(R.string.rsb_dashboard)
+                .setIcon(R.drawable.rsb_ic_tab_dashboard)
                 .setClass(DashboardFragment.class)
                 .build());
 
@@ -44,7 +44,7 @@ public class MPowerUiManager extends UiManager {
 
     /**
      * @return List of ActionItems w/ Activity class items. The class items are then used to
-     * construct an intent for a MenuItem when {@link org.researchstack.skin.ui.MainActivity#onCreateOptionsMenu}
+     * construct an intent for a MenuItem when {@link org.researchstack.backbone.ui.MainActivity#onCreateOptionsMenu}
      * is called
      */
     @Override
@@ -52,14 +52,14 @@ public class MPowerUiManager extends UiManager {
         List<ActionItem> navItems = new ArrayList<>();
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_learn)
-                .setTitle(R.string.rss_learn)
-                .setIcon(R.drawable.rss_ic_action_learn)
+                .setTitle(R.string.rsb_learn)
+                .setIcon(R.drawable.rsb_ic_action_learn)
                 .setClass(LearnActivity.class)
                 .build());
 
         navItems.add(new ActionItem.ActionItemBuilder().setId(R.id.nav_settings)
-                .setTitle(R.string.rss_settings)
-                .setIcon(R.drawable.rss_ic_action_settings)
+                .setTitle(R.string.rsb_settings)
+                .setIcon(R.drawable.rsb_ic_action_settings)
                 .setClass(SettingsActivity.class)
                 .build());
 

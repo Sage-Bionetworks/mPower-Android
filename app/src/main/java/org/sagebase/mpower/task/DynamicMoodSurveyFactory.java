@@ -51,7 +51,7 @@ public class DynamicMoodSurveyFactory extends MoodSurveyFactory {
 
         // Intro
         {
-            String text = context.getString(R.string.rss_activities_mood_survey_intended_use);
+            String text = context.getString(R.string.rsb_activities_mood_survey_intended_use);
             stepList.add(getIntroStep(context, frequency, text));
         }
 

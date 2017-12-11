@@ -3,8 +3,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import org.researchstack.skin.ui.fragment.SettingsFragment;
-
 /**
  * Preferences specific to MPower.
  */

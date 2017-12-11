@@ -11,10 +11,9 @@ import android.widget.TextView;
 
 import org.researchstack.backbone.utils.ResUtils;
 import org.researchstack.backbone.ResourceManager;
-import org.researchstack.skin.UiManager;
-import org.researchstack.skin.model.StudyOverviewModel;
-import org.researchstack.skin.ui.OverviewActivity;
-import org.researchstack.skin.ui.adapter.OnboardingPagerAdapter;
+import org.researchstack.backbone.model.StudyOverviewModel;
+import org.researchstack.backbone.ui.OverviewActivity;
+import org.researchstack.backbone.ui.adapter.OnboardingPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +64,7 @@ public class MPowerOverviewActivity extends OverviewActivity {
             container.addView(img);
         }
 
-        signUp = (Button) findViewById(org.researchstack.skin.R.id.intro_sign_up);
+        signUp = (Button) findViewById(org.researchstack.backbone.R.id.intro_sign_up);
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +72,7 @@ public class MPowerOverviewActivity extends OverviewActivity {
             }
         });
 
-        signIn = (TextView) findViewById(org.researchstack.skin.R.id.intro_sign_in);
+        signIn = (TextView) findViewById(org.researchstack.backbone.R.id.intro_sign_in);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,17 +83,17 @@ public class MPowerOverviewActivity extends OverviewActivity {
         int resId = ResUtils.getDrawableResourceId(this, model.getLogoName());
         logoView.setImageResource(resId);
 
-        pagerContainer = findViewById(org.researchstack.skin.R.id.pager_container);
+        pagerContainer = findViewById(org.researchstack.backbone.R.id.pager_container);
         pagerContainer.setTranslationY(48);
         pagerContainer.setAlpha(0);
         pagerContainer.setScaleX(.9f);
         pagerContainer.setScaleY(.9f);
 
-        pagerFrame = findViewById(org.researchstack.skin.R.id.pager_frame);
+        pagerFrame = findViewById(org.researchstack.backbone.R.id.pager_frame);
         pagerFrame.setAlpha(0);
 
         OnboardingPagerAdapter adapter = new OnboardingPagerAdapter(this, model.getQuestions());
-        ViewPager pager = (ViewPager) findViewById(org.researchstack.skin.R.id.pager);
+        ViewPager pager = (ViewPager) findViewById(org.researchstack.backbone.R.id.pager);
         pager.setOffscreenPageLimit(2);
         pager.setAdapter(adapter);
 
